@@ -30,6 +30,10 @@
 		1969969C20405E00002E626A /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1969969B20405E00002E626A /* Quote.swift */; };
 		19C3AADE20406A8A0013B19E /* AddQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C3AADD20406A8A0013B19E /* AddQuoteViewController.swift */; };
 		B3E350356EED432A58D0FAAF /* Pods_iThinkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECA09656E69BBB23831420F2 /* Pods_iThinkTests.framework */; };
+		F094B43B2040B7F70092DC78 /* EditQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B43A2040B7F70092DC78 /* EditQuoteViewController.swift */; };
+		F094B43D2040BBA30092DC78 /* ViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B43C2040BBA30092DC78 /* ViewController+Loading.swift */; };
+		F094B43F2040BC570092DC78 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B43E2040BC570092DC78 /* AppConstants.swift */; };
+		F094B4412040CC1E0092DC78 /* QuoteCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B4402040CC1E0092DC78 /* QuoteCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +89,10 @@
 		D5F4643FF6CE5A8EDDA59CF4 /* Pods-iThinkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iThinkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iThinkTests/Pods-iThinkTests.release.xcconfig"; sourceTree = "<group>"; };
 		E03920493349CF2C4BC257D2 /* Pods_iThink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iThink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECA09656E69BBB23831420F2 /* Pods_iThinkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iThinkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F094B43A2040B7F70092DC78 /* EditQuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditQuoteViewController.swift; sourceTree = "<group>"; };
+		F094B43C2040BBA30092DC78 /* ViewController+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Loading.swift"; sourceTree = "<group>"; };
+		F094B43E2040BC570092DC78 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		F094B4402040CC1E0092DC78 /* QuoteCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +200,7 @@
 				1969968A20401E11002E626A /* Extensions */,
 				1969967A20400AD2002E626A /* LoginViewController.swift */,
 				19699693204032CF002E626A /* HomeViewController.swift */,
+				F094B43A2040B7F70092DC78 /* EditQuoteViewController.swift */,
 				19C3AADD20406A8A0013B19E /* AddQuoteViewController.swift */,
 			);
 			path = Controllers;
@@ -218,6 +227,7 @@
 			children = (
 				19699683204017A3002E626A /* AlertManager.swift */,
 				1969969920404614002E626A /* AppValidator.swift */,
+				F094B43E2040BC570092DC78 /* AppConstants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -227,6 +237,7 @@
 			children = (
 				1969968820401D83002E626A /* AppUser.swift */,
 				1969969B20405E00002E626A /* Quote.swift */,
+				F094B4402040CC1E0092DC78 /* QuoteCategory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -236,6 +247,7 @@
 			children = (
 				1969968B20401E30002E626A /* ViewController+Alert.swift */,
 				19699695204033BA002E626A /* ViewController+Navigation.swift */,
+				F094B43C2040BBA30092DC78 /* ViewController+Loading.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -569,6 +581,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19699684204017A3002E626A /* AlertManager.swift in Sources */,
+				F094B43F2040BC570092DC78 /* AppConstants.swift in Sources */,
 				19699696204033BA002E626A /* ViewController+Navigation.swift in Sources */,
 				1969967B20400AD2002E626A /* LoginViewController.swift in Sources */,
 				1969968E2040283F002E626A /* FirebaseDataManager.swift in Sources */,
@@ -579,9 +592,12 @@
 				19699694204032CF002E626A /* HomeViewController.swift in Sources */,
 				1969968C20401E30002E626A /* ViewController+Alert.swift in Sources */,
 				1969969C20405E00002E626A /* Quote.swift in Sources */,
+				F094B4412040CC1E0092DC78 /* QuoteCategory.swift in Sources */,
+				F094B43B2040B7F70092DC78 /* EditQuoteViewController.swift in Sources */,
 				1969968920401D83002E626A /* AppUser.swift in Sources */,
 				1969969020402A7A002E626A /* FirebaseDataParser.swift in Sources */,
 				1969964A20400676002E626A /* AppDelegate.swift in Sources */,
+				F094B43D2040BBA30092DC78 /* ViewController+Loading.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

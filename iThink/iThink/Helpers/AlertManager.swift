@@ -9,7 +9,6 @@
 import UIKit
 
 typealias AlertOkCallback = () -> Void
-typealias AlertCancelCallback = () -> Void
 
 class AlertManager {
     static func showOkAlert(from: UIViewController,

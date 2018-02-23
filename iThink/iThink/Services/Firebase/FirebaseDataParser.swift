@@ -32,18 +32,9 @@ class FirebaseDataParser {
         if let quotesDict = snapshot.value as? Dictionary<String, AnyObject> {
             for (key, value) in quotesDict {
                 if let quoteDict = value as? Dictionary<String, AnyObject> {
-                    if  let text = quoteDict["text"] as? String,
-                        let creatorID = quoteDict["creatorID"] as? String,
-                        let votes = quoteDict["votes"] as? Int {
-                        
-                        let author = quoteDict["author"] as? String
-                        let date = quoteDict["date"] as? String
-                        quotes.append(Quote(id: key,
-                                            text: text,
-                                            creatorID: creatorID,
-                                            votes: votes,
-                                            author: author,
-                                            date: date))
+                    if let quote = getQuote(id: key,
+                                            quoteDict: quoteDict) {
+                        quotes.append(quote)
                     }
                 }
             }
@@ -55,24 +46,72 @@ class FirebaseDataParser {
         }
     }
     
+    
     static func getQuote(snapshot: DataSnapshot) -> Quote? {
         if let quoteDict = snapshot.value as? Dictionary<String, AnyObject> {
-            if  let text = quoteDict["text"] as? String,
-                let creatorID = quoteDict["creatorID"] as? String,
-                let votes = quoteDict["votes"] as? Int {
-                
-                let author = quoteDict["author"] as? String
-                let date = quoteDict["date"] as? String
-                
-                return Quote(id: snapshot.key,
-                             text: text,
-                             creatorID: creatorID,
-                             votes: votes,
-                             author: author,
-                             date: date)
+            return getQuote(id: snapshot.key,
+                            quoteDict: quoteDict)
+        }
+        else {
+            return nil
+        }
+    }
+
+    private static func getQuote(id : String,
+                                 quoteDict: Dictionary<String, AnyObject>) -> Quote? {
+        if  let categoryID = quoteDict["categoryID"] as? String,
+            let userID = quoteDict["userID"] as? String,
+            let text = quoteDict["text"] as? String,
+            let lastModified = quoteDict["lastModified"] as? Date {
+            
+            let author = quoteDict["author"] as? String
+            return Quote(id: id,
+                         categoryID: categoryID,
+                         userID: userID,
+                         text: text,
+                         lastModified: lastModified,
+                         author: author)
+        }
+        else {
+            return nil
+        }
+    }
+
+    
+    static func getQuoteCategories(snapshot: DataSnapshot) -> [QuoteCategory] {
+        var quoteCategories = [QuoteCategory]()
+        if let quoteCategoriesDict = snapshot.value as? Dictionary<String, AnyObject> {
+            for (key, value) in quoteCategoriesDict {
+                if let quoteCatDict = value as? Dictionary<String, AnyObject> {
+                    if let quoteCtegory = getQuoteCategory(id: key,
+                                                           quoteCatDict: quoteCatDict) {
+                        quoteCategories.append(quoteCtegory)
+                    }
+                }
             }
             
+            return quoteCategories
+        }
+        else {
+            return quoteCategories
+        }
+    }
+    
+    static func getQuoteCategory(snapshot: DataSnapshot) -> QuoteCategory? {
+        if let quoteCatDict = snapshot.value as? Dictionary<String, AnyObject> {
+            return getQuoteCategory(id: snapshot.key,
+                                    quoteCatDict: quoteCatDict)
+        }
+        else {
             return nil
+        }
+    }
+    
+    private static func getQuoteCategory(id : String,
+                                         quoteCatDict: Dictionary<String, AnyObject>) -> QuoteCategory? {
+        if  let name = quoteCatDict["name"] as? String {
+            return QuoteCategory(id: id,
+                                 name: name)
         }
         else {
             return nil

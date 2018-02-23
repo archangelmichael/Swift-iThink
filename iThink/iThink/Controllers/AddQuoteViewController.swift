@@ -9,70 +9,29 @@
 import UIKit
 
 class AddQuoteViewController: UIViewController {
-
-    private enum QuoteState {
-        case add, preview
-    }
     
-    @IBOutlet weak var tfAuthor: WhiteTextField!
-    @IBOutlet weak var lblAuthor: UILabel!
+    @IBOutlet weak var btnSelectCategory: UIButton!
     @IBOutlet weak var tvQuote: UITextView!
-    @IBOutlet weak var vActions: UIStackView!
-    @IBOutlet weak var vLoading: UIActivityIndicatorView!
-    @IBOutlet weak var lblFooter: UILabel!
-    @IBOutlet weak var btnClose: UIButton!
+    @IBOutlet weak var tfAuthor: WhiteTextField!
     
-    var selectedQuote: Quote?
-    
-    private var quoteState: QuoteState = .preview
+    var selectedQuote : Quote?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let _ = self.selectedQuote {
-            self.quoteState = .preview
-        }
-        else {
-            self.quoteState = .add
-        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.updateUI()
-    }
-    
-    func updateUI() {
-        switch self.quoteState {
-        case .add:
-            self.lblAuthor.text = nil
-            self.lblAuthor.isHidden = true
-            self.tfAuthor.text = nil
-            self.tfAuthor.isHidden = false
-            self.tvQuote.isEditable = true
-            self.btnClose.isHidden = true
-            self.vActions.isHidden = false
-        case .preview:
-            self.lblAuthor.text = self.selectedQuote?.author
-            self.lblAuthor.isHidden = false
-            self.tfAuthor.text = self.selectedQuote?.text
-            self.tfAuthor.isHidden = true
-            self.tvQuote.isEditable = false
-            self.btnClose.isHidden = false
-            self.vActions.isHidden = true
-        }
+        self.toggleLoading(show: false)
     }
 
+    @IBAction func onSelectCategory(_ sender: Any) {
+        // TODO: Implement selection and creation of category
+    }
     
-    @IBAction func onAdd(_ sender: Any) {
+    @IBAction func onSave(_ sender: Any) {
+        // TODO: Save quote
         self.goBack()
     }
     
     @IBAction func onCancel(_ sender: Any) {
-        self.goBack()
-    }
-    
-    @IBAction func onClose(_ sender: Any) {
         self.goBack()
     }
 }

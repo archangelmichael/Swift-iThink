@@ -11,9 +11,7 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var lblTitle: UILabel!
-    
     @IBOutlet weak var vTabs: UISegmentedControl!
-    
     @IBOutlet weak var cvQuotes: UICollectionView!
     
     var loggedUser : AppUser?
@@ -23,7 +21,9 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         self.lblTitle.text = " "
+        
         if let loggedUser = FirebaseAuthManager.sharedInstance.loggedUser {
+            self.toggleLoading()
             FirebaseDataManager.sharedInstance.getUser(uid: loggedUser.uid,
                                                        success:
                 { [weak self] (user) in
@@ -31,7 +31,8 @@ class HomeViewController: UIViewController {
                 },
                                                        failure:
                 { [weak self] (error) in
-                    self?.onSignOut(UIButton())
+                    self?.updateProfileError(error: error)
+                    
             })
         }
         else {
@@ -47,16 +48,23 @@ class HomeViewController: UIViewController {
     }
     
     func updateProfileSuccess(user: AppUser) {
+        self.toggleLoading(show: false)
         self.loggedUser = user
         self.lblTitle.text = "Signed in as @\(user.name)"
     }
     
-    func updateProfileError(error: Error) {
-        self.loggedUser = nil
-        
+    func updateProfileError(error: String?) {
+        self.show(title: "Loading profile failed",
+                  message: error)
+        { [weak self] () in
+            self?.loggedUser = nil
+            self?.onSignOut(UIButton())
+        }
     }
 
     @IBAction func onSignOut(_ sender: Any) {
+        self.toggleLoading(show: false)
+        
         self.loggedUser = nil
         if FirebaseAuthManager.sharedInstance.logout() {
             self.goBack()
@@ -67,6 +75,8 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func onQuote(_ sender: Any) {
-        self.show(vc: AddQuoteViewController.self)
+        
+        self.show(vc: EditQuoteViewController.self)
+//        self.show(vc: AddQuoteViewController.self)
     }
 }

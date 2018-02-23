@@ -10,23 +10,24 @@ import UIKit
 
 class Quote: NSObject {
     var id: String
+    var categoryID: String
+    var userID: String
     var text: String
-    var creatorID: String
-    var votes: Int = 0
+    var lastModified: Date
     var author: String? = nil
-    var date: String? = nil
     
     init(id: String,
+         categoryID: String,
+         userID: String,
          text: String,
-         creatorID: String,
-         votes: Int = 0,
-         author: String?,
-         date: String?) {
+         lastModified: Date,
+         author: String? = nil) {
+        
         self.id = id
+        self.categoryID = categoryID
+        self.userID = userID
         self.text = text
-        self.creatorID = creatorID
-        self.votes = votes
+        self.lastModified = lastModified
         self.author = author
-        self.date = date
     }
 }
