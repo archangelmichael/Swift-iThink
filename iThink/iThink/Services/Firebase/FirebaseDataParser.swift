@@ -26,4 +26,56 @@ class FirebaseDataParser {
             return nil
         }
     }
+    
+    static func getQuotes(snapshot: DataSnapshot) -> [Quote] {
+        var quotes = [Quote]()
+        if let quotesDict = snapshot.value as? Dictionary<String, AnyObject> {
+            for (key, value) in quotesDict {
+                if let quoteDict = value as? Dictionary<String, AnyObject> {
+                    if  let text = quoteDict["text"] as? String,
+                        let creatorID = quoteDict["creatorID"] as? String,
+                        let votes = quoteDict["votes"] as? Int {
+                        
+                        let author = quoteDict["author"] as? String
+                        let date = quoteDict["date"] as? String
+                        quotes.append(Quote(id: key,
+                                            text: text,
+                                            creatorID: creatorID,
+                                            votes: votes,
+                                            author: author,
+                                            date: date))
+                    }
+                }
+            }
+            
+            return quotes
+        }
+        else {
+            return quotes
+        }
+    }
+    
+    static func getQuote(snapshot: DataSnapshot) -> Quote? {
+        if let quoteDict = snapshot.value as? Dictionary<String, AnyObject> {
+            if  let text = quoteDict["text"] as? String,
+                let creatorID = quoteDict["creatorID"] as? String,
+                let votes = quoteDict["votes"] as? Int {
+                
+                let author = quoteDict["author"] as? String
+                let date = quoteDict["date"] as? String
+                
+                return Quote(id: snapshot.key,
+                             text: text,
+                             creatorID: creatorID,
+                             votes: votes,
+                             author: author,
+                             date: date)
+            }
+            
+            return nil
+        }
+        else {
+            return nil
+        }
+    }
 }

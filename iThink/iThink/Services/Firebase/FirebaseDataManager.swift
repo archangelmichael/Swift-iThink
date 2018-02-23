@@ -13,6 +13,9 @@ import FirebaseDatabase
 typealias DataUserSuccess = (AppUser) -> Void
 typealias DataUserFailure = (String) -> Void
 
+typealias DataQuotesSuccess = ([Quote]) -> Void
+typealias DataQuotesFailure = (String) -> Void
+
 class FirebaseDataManager : NSObject {
     
     static let sharedInstance = FirebaseDataManager()
@@ -26,6 +29,12 @@ class FirebaseDataManager : NSObject {
     private var usersReference: DatabaseReference {
         return dbReference.child("users")
     }
+    
+    private var quotesReference: DatabaseReference {
+        return dbReference.child("quotes")
+    }
+    
+    // MARK: USERS
     
     func saveUser(uid: String,
                   name: String,
@@ -56,4 +65,92 @@ class FirebaseDataManager : NSObject {
                 failure?(error.localizedDescription)
         })
     }
+    
+    
+    
+    // MARK: QUOTES
+    
+    func getQuotes(completion: DataQuotesSuccess?) {
+        quotesReference.observe(DataEventType.value) { (snapshot) in
+            let quotes = FirebaseDataParser.getQuotes(snapshot: snapshot)
+            completion?(quotes)
+        }
+    }
+    
+//    func getThemeByID(themeID: String,
+//                      completion: DataQuotesSuccess?) {
+//        quotesReference.child(themeID).observe(DataEventType.value)
+//        { (snapshot) in
+//            let quote = FirebaseDataParser.getChatTheme(snapshot: snapshot)
+//            completion?(quote)
+//        }
+//    }
+//    
+//    func saveQuote(name: String,
+//                   author: String,
+//                   authorID: String,
+//                   filePath: String,
+//                   failure: DataQuoteOpFailure?,
+//                   success: DataQuotesSuccess?) {
+//        let quote = [
+//            "name" : name,
+//            "author" : author,
+//            "authorID" : authorID,
+//            "filePath" : filePath,
+//            "viewers" : [String]()
+//            ] as [String : Any]
+//        
+//        quotesReference.childByAutoId().setValue(quote)
+//        { [weak self] (error, dbRef) in
+//            if let err = error {
+//                failure?(err)
+//            }
+//            else {
+//                self?.getQuoteWithRef(dbRef: dbRef, completion: success)
+//            }
+//        }
+//    }
+//    
+//    func updateQuote(quote: ChatQuote,
+//                     viewers: [String],
+//                     failure: DataQuoteOpFailure?,
+//                     success: DataQuotesSuccess?) {
+//        let quoteRef = quotesReference.child(quote.uid)
+//        let quoteUpdate = ["viewers" : viewers] as [String : Any]
+//        quoteRef.updateChildValues(quoteUpdate)
+//        { [weak self] (error, dbRef) in
+//            if let err = error {
+//                failure?(err)
+//            }
+//            else {
+//                self?.getquoteWithRef(dbRef: dbRef, completion: success)
+//            }
+//        }
+//    }
+//    
+//    func deleteQuote(quote: ChatQuote,
+//                     failure: DataQuoteOpFailure?,
+//                     success: DataQuotesSuccess?) {
+//        quotesReference.child(quote.uid).removeValue
+//            { [weak self]  (error, dbRef) in
+//                if let err = error {
+//                    failure?(err)
+//                }
+//                else {
+//                    self?.getQuoteWithRef(dbRef: dbRef, completion: success)
+//                }
+//        }
+//    }
+//    
+//    func getQuoteWithRef(dbRef: DatabaseReference,
+//                         success: DataQuotesSuccess?) {
+//        dbRef.observe(DataEventType.value,
+//                      with:
+//            { (snapshot) in
+//                let quote = FirebaseDataParser.getQuote(snapshot: snapshot)
+//                completion?(quote)
+//        })
+//    }
+    
+    
 }

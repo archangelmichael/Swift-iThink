@@ -27,6 +27,8 @@
 		19699694204032CF002E626A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19699693204032CF002E626A /* HomeViewController.swift */; };
 		19699696204033BA002E626A /* ViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19699695204033BA002E626A /* ViewController+Navigation.swift */; };
 		1969969A20404614002E626A /* AppValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1969969920404614002E626A /* AppValidator.swift */; };
+		1969969C20405E00002E626A /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1969969B20405E00002E626A /* Quote.swift */; };
+		19C3AADE20406A8A0013B19E /* AddQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C3AADD20406A8A0013B19E /* AddQuoteViewController.swift */; };
 		B3E350356EED432A58D0FAAF /* Pods_iThinkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECA09656E69BBB23831420F2 /* Pods_iThinkTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +74,8 @@
 		19699693204032CF002E626A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		19699695204033BA002E626A /* ViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Navigation.swift"; sourceTree = "<group>"; };
 		1969969920404614002E626A /* AppValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppValidator.swift; sourceTree = "<group>"; };
+		1969969B20405E00002E626A /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		19C3AADD20406A8A0013B19E /* AddQuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuoteViewController.swift; sourceTree = "<group>"; };
 		1D6995992916723419B27C09 /* Pods-iThinkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iThinkUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iThinkUITests/Pods-iThinkUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4848B7DC32710136E75B4254 /* Pods_iThinkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iThinkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6361D2CD7B40399E0B75B838 /* Pods-iThink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iThink.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iThink/Pods-iThink.debug.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 				1969968A20401E11002E626A /* Extensions */,
 				1969967A20400AD2002E626A /* LoginViewController.swift */,
 				19699693204032CF002E626A /* HomeViewController.swift */,
+				19C3AADD20406A8A0013B19E /* AddQuoteViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				1969968820401D83002E626A /* AppUser.swift */,
+				1969969B20405E00002E626A /* Quote.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -569,8 +575,10 @@
 				1969968620401B28002E626A /* FirebaseAuthManager.swift in Sources */,
 				19699681204010AA002E626A /* WhiteTextField.swift in Sources */,
 				1969969A20404614002E626A /* AppValidator.swift in Sources */,
+				19C3AADE20406A8A0013B19E /* AddQuoteViewController.swift in Sources */,
 				19699694204032CF002E626A /* HomeViewController.swift in Sources */,
 				1969968C20401E30002E626A /* ViewController+Alert.swift in Sources */,
+				1969969C20405E00002E626A /* Quote.swift in Sources */,
 				1969968920401D83002E626A /* AppUser.swift in Sources */,
 				1969969020402A7A002E626A /* FirebaseDataParser.swift in Sources */,
 				1969964A20400676002E626A /* AppDelegate.swift in Sources */,

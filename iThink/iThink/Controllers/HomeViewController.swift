@@ -12,12 +12,17 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var lblTitle: UILabel!
     
+    @IBOutlet weak var vTabs: UISegmentedControl!
+    
+    @IBOutlet weak var cvQuotes: UICollectionView!
+    
     var loggedUser : AppUser?
     var logoutUser = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.lblTitle.text = " "
         if let loggedUser = FirebaseAuthManager.sharedInstance.loggedUser {
             FirebaseDataManager.sharedInstance.getUser(uid: loggedUser.uid,
                                                        success:
@@ -43,7 +48,7 @@ class HomeViewController: UIViewController {
     
     func updateProfileSuccess(user: AppUser) {
         self.loggedUser = user
-        self.lblTitle.text = "Signed in as \(user.name)"
+        self.lblTitle.text = "Signed in as @\(user.name)"
     }
     
     func updateProfileError(error: Error) {
@@ -59,5 +64,9 @@ class HomeViewController: UIViewController {
         else {
             self.show(title: "Logout failed")
         }
+    }
+    
+    @IBAction func onQuote(_ sender: Any) {
+        self.show(vc: AddQuoteViewController.self)
     }
 }
