@@ -52,6 +52,15 @@ extension UIViewController : NavigationController {
         }
     }
     
+    func showModally(vc: UIViewController,
+                     animated: Bool = true,
+                     completion: (() -> Void)? = nil)
+    {
+        vc.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        vc.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        self.present(vc, animated: animated, completion: completion)
+    }
+    
     func goBack() {
         if let navVC = self.navigationController {
             navVC.popViewController(animated: true)

@@ -33,7 +33,13 @@ class AddQuoteViewController: UIViewController {
     }
 
     @IBAction func onSelectCategory(_ sender: Any) {
-        // TODO: Implement selection and creation of category
+        if let modalVC = self.storyboard?.instantiateViewController(withIdentifier: ModalPickerViewController.self.defaultStoryboardIdentifier) as? ModalPickerViewController {
+            self.showModally(vc: modalVC)
+        }
+        else {
+            self.show(title: "Application error",
+                      message: "No categories found")
+        }
     }
     
     @IBAction func onSave(_ sender: Any) {
