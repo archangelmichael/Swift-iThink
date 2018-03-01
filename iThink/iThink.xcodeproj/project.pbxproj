@@ -32,6 +32,9 @@
 		1969969C20405E00002E626A /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1969969B20405E00002E626A /* Quote.swift */; };
 		19C3AADE20406A8A0013B19E /* AddQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C3AADD20406A8A0013B19E /* AddQuoteViewController.swift */; };
 		B3E350356EED432A58D0FAAF /* Pods_iThinkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECA09656E69BBB23831420F2 /* Pods_iThinkTests.framework */; };
+		F01913D82048193E00B57933 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01913D72048193E00B57933 /* AppData.swift */; };
+		F01913DA2048226A00B57933 /* PickerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01913D92048226A00B57933 /* PickerItem.swift */; };
+		F01913DC204822A500B57933 /* PickerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01913DB204822A500B57933 /* PickerParser.swift */; };
 		F094B43B2040B7F70092DC78 /* EditQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B43A2040B7F70092DC78 /* EditQuoteViewController.swift */; };
 		F094B43D2040BBA30092DC78 /* ViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B43C2040BBA30092DC78 /* ViewController+Loading.swift */; };
 		F094B43F2040BC570092DC78 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B43E2040BC570092DC78 /* AppConstants.swift */; };
@@ -93,6 +96,9 @@
 		D5F4643FF6CE5A8EDDA59CF4 /* Pods-iThinkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iThinkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iThinkTests/Pods-iThinkTests.release.xcconfig"; sourceTree = "<group>"; };
 		E03920493349CF2C4BC257D2 /* Pods_iThink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iThink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECA09656E69BBB23831420F2 /* Pods_iThinkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iThinkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F01913D72048193E00B57933 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		F01913D92048226A00B57933 /* PickerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerItem.swift; sourceTree = "<group>"; };
+		F01913DB204822A500B57933 /* PickerParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerParser.swift; sourceTree = "<group>"; };
 		F094B43A2040B7F70092DC78 /* EditQuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditQuoteViewController.swift; sourceTree = "<group>"; };
 		F094B43C2040BBA30092DC78 /* ViewController+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Loading.swift"; sourceTree = "<group>"; };
 		F094B43E2040BC570092DC78 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -165,6 +171,7 @@
 		1969964820400676002E626A /* iThink */ = {
 			isa = PBXGroup;
 			children = (
+				F01913D62048192C00B57933 /* Data */,
 				1969969120402F05002E626A /* Services */,
 				1969968220401782002E626A /* Helpers */,
 				1969968720401D6F002E626A /* Models */,
@@ -234,6 +241,7 @@
 				19699683204017A3002E626A /* AlertManager.swift */,
 				1969969920404614002E626A /* AppValidator.swift */,
 				F094B43E2040BC570092DC78 /* AppConstants.swift */,
+				F01913DB204822A500B57933 /* PickerParser.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -244,6 +252,7 @@
 				1969968820401D83002E626A /* AppUser.swift */,
 				1969969B20405E00002E626A /* Quote.swift */,
 				F094B4402040CC1E0092DC78 /* QuoteCategory.swift */,
+				F01913D92048226A00B57933 /* PickerItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,6 +293,14 @@
 				4848B7DC32710136E75B4254 /* Pods_iThinkUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F01913D62048192C00B57933 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F01913D72048193E00B57933 /* AppData.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -587,6 +604,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19699684204017A3002E626A /* AlertManager.swift in Sources */,
+				F01913DC204822A500B57933 /* PickerParser.swift in Sources */,
 				F094B43F2040BC570092DC78 /* AppConstants.swift in Sources */,
 				19699696204033BA002E626A /* ViewController+Navigation.swift in Sources */,
 				1969967B20400AD2002E626A /* LoginViewController.swift in Sources */,
@@ -594,6 +612,7 @@
 				192679D02047030F00545DF3 /* UIView+Rounded.swift in Sources */,
 				1969968620401B28002E626A /* FirebaseAuthManager.swift in Sources */,
 				19699681204010AA002E626A /* WhiteTextField.swift in Sources */,
+				F01913DA2048226A00B57933 /* PickerItem.swift in Sources */,
 				192679D22047065100545DF3 /* ModalPickerViewController.swift in Sources */,
 				1969969A20404614002E626A /* AppValidator.swift in Sources */,
 				19C3AADE20406A8A0013B19E /* AddQuoteViewController.swift in Sources */,
@@ -606,6 +625,7 @@
 				1969969020402A7A002E626A /* FirebaseDataParser.swift in Sources */,
 				1969964A20400676002E626A /* AppDelegate.swift in Sources */,
 				F094B43D2040BBA30092DC78 /* ViewController+Loading.swift in Sources */,
+				F01913D82048193E00B57933 /* AppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,19 +8,26 @@
 
 import UIKit
 
+protocol ModalPickerDelegate {
+    func didSelectPickerItemId(item: PickerItem?) -> Void
+}
+
 class ModalPickerViewController: UIViewController {
 
     @IBOutlet weak var pvItems: UIPickerView!
     
+    var pickerDelegate: ModalPickerDelegate?
+    var pickerItems : [PickerItem] = []
+    var selectedItem : PickerItem?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.pvItems.dataSource = self
+        self.pvItems.delegate = self
+        
+        if self.selectedItem == nil && self.pickerItems.count > 0 {
+            self.selectedItem = self.pickerItems[0]
+        }
     }
     
     @IBAction func onBack(_ sender: Any) {
@@ -28,16 +35,29 @@ class ModalPickerViewController: UIViewController {
     }
     
     @IBAction func onDone(_ sender: Any) {
+        self.pickerDelegate?.didSelectPickerItemId(item: self.selectedItem)
         self.goBack()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+extension ModalPickerViewController : UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.pickerItems.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.pickerItems[row].name
+    }
+}
+
+extension ModalPickerViewController : UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.selectedItem = self.pickerItems[row]
+    }
+}
+
+

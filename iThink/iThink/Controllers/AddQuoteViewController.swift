@@ -16,6 +16,9 @@ class AddQuoteViewController: UIViewController {
     @IBOutlet weak var svQuote: UIScrollView!
     
     var selectedQuote : Quote?
+    var selectedQuoteCategory : QuoteCategory?
+    
+    private let MissingQuoteCategory: String = "Select Category"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +34,18 @@ class AddQuoteViewController: UIViewController {
         
         self.toggleLoading(show: false)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
 
     @IBAction func onSelectCategory(_ sender: Any) {
         if let modalVC = self.storyboard?.instantiateViewController(withIdentifier: ModalPickerViewController.self.defaultStoryboardIdentifier) as? ModalPickerViewController {
+            let allCategories = AppData.sharedInstance.quoteCategories
+            let pickerItems = PickerParser.getItemsFromQuoteCategories(quoteCategories: allCategories)
+            modalVC.pickerItems = pickerItems
+            modalVC.pickerDelegate = self
             self.showModally(vc: modalVC)
         }
         else {
@@ -54,6 +66,15 @@ class AddQuoteViewController: UIViewController {
     @objc func handleTap(guesture: UITapGestureRecognizer) {
         self.tfAuthor.resignFirstResponder()
         self.tvQuote.resignFirstResponder()
+    }
+    
+    private func refreshSelectedCategory(quoteCategory: QuoteCategory?) {
+        if let quoteCategory = selectedQuoteCategory {
+            self.btnSelectCategory.setTitle(quoteCategory.name, for: UIControlState.normal)
+        }
+        else {
+            self.btnSelectCategory.setTitle(MissingQuoteCategory, for: UIControlState.normal)
+        }
     }
 }
 
@@ -86,5 +107,12 @@ extension AddQuoteViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+}
+
+extension AddQuoteViewController : ModalPickerDelegate {
+    func didSelectPickerItemId(item: PickerItem?) {
+        self.selectedQuoteCategory = AppData.sharedInstance.getQuoteCategoryById(quoteCategoryId: item?.id)
+        self.refreshSelectedCategory(quoteCategory: self.selectedQuoteCategory)
     }
 }

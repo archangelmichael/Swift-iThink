@@ -45,6 +45,18 @@ class HomeViewController: UIViewController {
         if self.logoutUser {
             self.onSignOut(UIButton())
         }
+        else {
+            if !AppData.sharedInstance.areQuoteCategoriesLoaded {
+                AppData.sharedInstance.reloadQuoteCategories(callback: { [weak self] in
+                    self?.refreshQuotes()
+                })
+            }
+        }
+    }
+    
+    private func refreshQuotes()
+    {
+        
     }
     
     func updateProfileSuccess(user: AppUser) {
