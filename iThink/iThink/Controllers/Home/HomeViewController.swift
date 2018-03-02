@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var cvQuotes: UICollectionView!
     
-    @IBOutlet weak var svTabs: UIStackView!
+    @IBOutlet weak var vTabs: UIView!
     @IBOutlet weak var btnAll: UIButton!
     @IBOutlet weak var btnFavourites: UIButton!
     
@@ -24,6 +24,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         self.lblTitle.text = " "
+        self.vTabs.setColoredRoundedCorners()
+        self.onTabSelected(self.btnAll)
         
         if let loggedUser = FirebaseAuthManager.sharedInstance.loggedUser {
             self.toggleLoading()
@@ -57,32 +59,20 @@ class HomeViewController: UIViewController {
         }
     }
     
-    private func refreshQuotes()
-    {
-        
-    }
-    
-    func updateProfileSuccess(user: AppUser) {
-        self.toggleLoading(show: false)
-        self.loggedUser = user
-        self.lblTitle.text = "Signed in as @\(user.name)"
-    }
-    
-    func updateProfileError(error: String?) {
-        self.show(title: "Loading profile failed",
-                  message: error)
-        { [weak self] () in
-            self?.loggedUser = nil
-            self?.onSignOut(UIButton())
+    @IBAction func onTabSelected(_ sender: UIButton) {
+        switch sender {
+        case self.btnAll:
+            self.btnAll.backgroundColor = UIColor.white
+            self.btnFavourites.backgroundColor = UIColor.clear
+            self.btnFavourites.isSelected = false
+        case self.btnFavourites:
+            self.btnFavourites.backgroundColor =  UIColor.white
+            self.btnAll.backgroundColor = UIColor.clear
+            self.btnAll.isSelected = false
+        default: break
         }
-    }
-    
-    @IBAction func onAll(_ sender: Any) {
         
-    }
-    
-    @IBAction func onFavourites(_ sender: Any) {
-        
+        sender.isSelected = true
     }
     
     @IBAction func onSignOut(_ sender: Any) {
@@ -100,5 +90,25 @@ class HomeViewController: UIViewController {
     @IBAction func onAddQuote(_ sender: Any) {
         self.show(vc: AddQuoteViewController.self,
                   storyboard: self.storyboard)
+    }
+    
+    private func refreshQuotes()
+    {
+        
+    }
+    
+    private func updateProfileSuccess(user: AppUser) {
+        self.toggleLoading(show: false)
+        self.loggedUser = user
+        self.lblTitle.text = "Signed in as @\(user.name)"
+    }
+    
+    private func updateProfileError(error: String?) {
+        self.show(title: "Loading profile failed",
+                  message: error)
+        { [weak self] () in
+            self?.loggedUser = nil
+            self?.onSignOut(UIButton())
+        }
     }
 }

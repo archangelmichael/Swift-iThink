@@ -49,31 +49,56 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0CJ-LY-oeo">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYT-LO-ATO">
                                         <rect key="frame" x="0.0" y="69" width="343" height="34"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHW-hN-ZDj">
-                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                <state key="normal" title="All">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="onAll:" destination="Wlr-HS-Lrg" eventType="touchUpInside" id="TmY-7Y-dEt"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLX-Jg-wEs">
-                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                <state key="normal" title="Favourites">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="onFavourites:" destination="Wlr-HS-Lrg" eventType="touchUpInside" id="Q2f-xa-4dK"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0CJ-LY-oeo">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="34"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHW-hN-ZDj">
+                                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                        <state key="normal" title="All">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <state key="selected">
+                                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <state key="highlighted">
+                                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onTabSelected:" destination="Wlr-HS-Lrg" eventType="touchUpInside" id="gf6-yb-KAl"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLX-Jg-wEs">
+                                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="34"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                        <state key="normal" title="Favourites">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <state key="selected">
+                                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <state key="highlighted">
+                                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onTabSelected:" destination="Wlr-HS-Lrg" eventType="touchUpInside" id="Mip-Jn-wJG"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
-                                    </stackView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="0CJ-LY-oeo" firstAttribute="top" secondItem="aYT-LO-ATO" secondAttribute="top" id="L8r-h6-NE5"/>
+                                            <constraint firstAttribute="trailing" secondItem="0CJ-LY-oeo" secondAttribute="trailing" id="Xlc-TK-qnS"/>
+                                            <constraint firstAttribute="bottom" secondItem="0CJ-LY-oeo" secondAttribute="bottom" id="keC-3E-dd2"/>
+                                            <constraint firstItem="0CJ-LY-oeo" firstAttribute="leading" secondItem="aYT-LO-ATO" secondAttribute="leading" id="zPo-v6-mjG"/>
+                                        </constraints>
+                                    </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SAk-Zz-bLT">
                                         <rect key="frame" x="0.0" y="111" width="343" height="477"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -109,19 +134,19 @@
                                 <constraints>
                                     <constraint firstItem="drA-Da-yKj" firstAttribute="centerY" secondItem="A6M-bD-EvK" secondAttribute="centerY" id="0AO-mE-gu8"/>
                                     <constraint firstItem="5Wv-9Y-bR5" firstAttribute="leading" secondItem="A6M-bD-EvK" secondAttribute="leading" id="3EF-o4-dl6"/>
+                                    <constraint firstItem="aYT-LO-ATO" firstAttribute="leading" secondItem="A6M-bD-EvK" secondAttribute="leading" id="3Xa-4Y-XXz"/>
                                     <constraint firstItem="Y9r-fa-I7V" firstAttribute="leading" secondItem="A6M-bD-EvK" secondAttribute="leading" id="6Uf-eW-I9a"/>
+                                    <constraint firstItem="aYT-LO-ATO" firstAttribute="top" secondItem="Y9r-fa-I7V" secondAttribute="bottom" constant="8" id="6lw-qC-VFB"/>
                                     <constraint firstItem="Y9r-fa-I7V" firstAttribute="top" secondItem="5Wv-9Y-bR5" secondAttribute="bottom" constant="8" id="7QC-qR-VKf"/>
                                     <constraint firstAttribute="trailing" secondItem="5Wv-9Y-bR5" secondAttribute="trailing" id="NhM-Qq-fxM"/>
-                                    <constraint firstItem="0CJ-LY-oeo" firstAttribute="leading" secondItem="A6M-bD-EvK" secondAttribute="leading" id="Srs-vu-zo7"/>
-                                    <constraint firstAttribute="trailing" secondItem="0CJ-LY-oeo" secondAttribute="trailing" id="Wl4-Uo-Jbr"/>
+                                    <constraint firstAttribute="trailing" secondItem="aYT-LO-ATO" secondAttribute="trailing" id="UQz-09-nzJ"/>
                                     <constraint firstItem="SAk-Zz-bLT" firstAttribute="leading" secondItem="A6M-bD-EvK" secondAttribute="leading" id="h3O-7z-SKO"/>
                                     <constraint firstItem="5Wv-9Y-bR5" firstAttribute="top" secondItem="A6M-bD-EvK" secondAttribute="top" id="iH6-YE-gLN"/>
                                     <constraint firstItem="drA-Da-yKj" firstAttribute="centerX" secondItem="A6M-bD-EvK" secondAttribute="centerX" id="kSY-hc-c3l"/>
                                     <constraint firstAttribute="trailing" secondItem="SAk-Zz-bLT" secondAttribute="trailing" id="l53-wH-DMk"/>
+                                    <constraint firstItem="SAk-Zz-bLT" firstAttribute="top" secondItem="aYT-LO-ATO" secondAttribute="bottom" constant="8" id="lSn-IL-Ojb"/>
                                     <constraint firstAttribute="bottom" secondItem="SAk-Zz-bLT" secondAttribute="bottom" id="mcA-Iv-iih"/>
-                                    <constraint firstItem="0CJ-LY-oeo" firstAttribute="top" secondItem="Y9r-fa-I7V" secondAttribute="bottom" constant="8" id="r7c-JH-QP6"/>
                                     <constraint firstAttribute="trailing" secondItem="Y9r-fa-I7V" secondAttribute="trailing" id="suw-b9-zcW"/>
-                                    <constraint firstItem="SAk-Zz-bLT" firstAttribute="top" secondItem="0CJ-LY-oeo" secondAttribute="bottom" constant="8" id="uPA-8g-Hlz"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -144,7 +169,7 @@
                         <outlet property="btnFavourites" destination="mLX-Jg-wEs" id="Cio-Cb-kYc"/>
                         <outlet property="cvQuotes" destination="SAk-Zz-bLT" id="ZUZ-eb-dMT"/>
                         <outlet property="lblTitle" destination="Y9r-fa-I7V" id="bd0-HQ-f53"/>
-                        <outlet property="svTabs" destination="0CJ-LY-oeo" id="I7k-Dl-hhU"/>
+                        <outlet property="vTabs" destination="aYT-LO-ATO" id="S8R-aX-lVK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ghH-9D-5le" sceneMemberID="firstResponder"/>
