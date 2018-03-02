@@ -12,6 +12,8 @@ import FirebaseAuth
 
 class SplashViewController: UIViewController {
 
+    var loginNavDelegate : LoginBaseNavigationDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -19,20 +21,18 @@ class SplashViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-            // change 2 to desired number of seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             self?.checkLogin()
         }
     }
     
-    func checkLogin() {
+    private func checkLogin() {
         if FirebaseAuthManager.sharedInstance.isUserLogged {
             self.navigationController?.performSegue(withIdentifier: AppConstants.Segues.GoHome,
                                                     sender: self)
         }
         else {
-            self.navigationController?.performSegue(withIdentifier: AppConstants.Segues.GoLogin,
-                                                    sender: self)
+            self.loginNavDelegate?.goToVC(vcType: .login)
         }
     }
 }

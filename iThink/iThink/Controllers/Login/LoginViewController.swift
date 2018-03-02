@@ -18,6 +18,8 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var btnSignIn: UIButton!
     @IBOutlet weak var btnSignUp: UIButton!
     
+    var loginNavDelegate : LoginBaseNavigationDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +37,10 @@ class LoginViewController: BaseViewController {
         else {
             self.toggleUserInteractions(enable: true)
         }
+    }
+    
+    @IBAction func onSignUp(_ sender: Any) {
+        self.loginNavDelegate?.goToVC(vcType: .register)
     }
     
     @IBAction func onSignIn(_ sender: Any) {
@@ -75,7 +81,7 @@ class LoginViewController: BaseViewController {
         })
     }
     
-    func showHome() {
+    private func showHome() {
         self.toggleUserInteractions(enable: true)
         self.navigationController?.performSegue(withIdentifier: AppConstants.Segues.GoHome,
                                                sender: self)

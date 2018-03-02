@@ -19,7 +19,6 @@ struct AppConstants {
     
     struct Segues {
         static let GoHome = "goToHome"
-        static let GoLogin = "goToLogin"
     }
     
     struct Colors {

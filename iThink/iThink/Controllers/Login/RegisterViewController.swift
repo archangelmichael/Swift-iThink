@@ -17,6 +17,8 @@ class RegisterViewController: BaseViewController {
     @IBOutlet weak var tfPass: WhiteTextField!
     @IBOutlet weak var tfPassConfirm: WhiteTextField!
     
+    var loginNavDelegate : LoginBaseNavigationDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -70,7 +72,7 @@ class RegisterViewController: BaseViewController {
                                                     success:
             { [weak self] (user) in
                 self?.toggleUserInteractions(enable: true)
-                self?.goBack(animated: false)
+                self?.loginNavDelegate?.goToVC(vcType: .login)
             },
                                                     failure:
             { [weak self] (error) in
@@ -85,7 +87,7 @@ class RegisterViewController: BaseViewController {
             return
         }
         
-        self.goBack(animated: false)
+        self.loginNavDelegate?.goToVC(vcType: .login)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

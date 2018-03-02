@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,15 +20,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="LbU-G6-c9E">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="750" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="LbU-G6-c9E" secondAttribute="trailing" id="S63-My-3Lp"/>
+                            <constraint firstItem="LbU-G6-c9E" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="2" id="Hmy-II-j0A"/>
+                            <constraint firstItem="LbU-G6-c9E" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="NHn-tx-WAo"/>
                             <constraint firstItem="LbU-G6-c9E" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="eTy-Ox-nZV"/>
                             <constraint firstAttribute="bottom" secondItem="LbU-G6-c9E" secondAttribute="bottom" id="mWK-BR-fRW"/>
-                            <constraint firstItem="LbU-G6-c9E" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="nRR-3j-N44"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
