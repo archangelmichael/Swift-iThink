@@ -11,8 +11,11 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var vTabs: UISegmentedControl!
     @IBOutlet weak var cvQuotes: UICollectionView!
+    
+    @IBOutlet weak var svTabs: UIStackView!
+    @IBOutlet weak var btnAll: UIButton!
+    @IBOutlet weak var btnFavourites: UIButton!
     
     var loggedUser : AppUser?
     var logoutUser = false
@@ -73,7 +76,15 @@ class HomeViewController: UIViewController {
             self?.onSignOut(UIButton())
         }
     }
-
+    
+    @IBAction func onAll(_ sender: Any) {
+        
+    }
+    
+    @IBAction func onFavourites(_ sender: Any) {
+        
+    }
+    
     @IBAction func onSignOut(_ sender: Any) {
         self.toggleLoading(show: false)
         
@@ -86,8 +97,8 @@ class HomeViewController: UIViewController {
         }
     }
     
-    @IBAction func onQuote(_ sender: Any) {
-        self.show(vc: EditQuoteViewController.self,
+    @IBAction func onAddQuote(_ sender: Any) {
+        self.show(vc: AddQuoteViewController.self,
                   storyboard: self.storyboard)
     }
 }

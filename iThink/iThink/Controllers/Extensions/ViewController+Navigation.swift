@@ -68,11 +68,12 @@ extension UIViewController : NavigationController {
     }
     
     func showModally(vc: UIViewController,
+                     fromVC: UIViewController,
                      animated: Bool = true,
                      completion: (() -> Void)? = nil) {
         vc.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         vc.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-        self.present(vc, animated: animated, completion: completion)
+        fromVC.present(vc, animated: animated, completion: completion)
     }
     
     func goBack(animated: Bool = true,

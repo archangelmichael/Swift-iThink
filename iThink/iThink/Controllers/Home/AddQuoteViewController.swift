@@ -43,14 +43,17 @@ class AddQuoteViewController: UIViewController {
     @IBAction func onSelectCategory(_ sender: Any) {
         let allCategories = AppData.sharedInstance.quoteCategories
         let pickerItems = PickerParser.getItemsFromQuoteCategories(quoteCategories: allCategories)
-        if let modalVC = ModalPickerViewController.getInstance(items: pickerItems,
+        if
+            let tabBarVC = self.tabBarController,
+            let modalVC = ModalPickerViewController.getInstance(items: pickerItems,
                                                                selectedItem: nil,
                                                                delegate: self) {
-            self.showModally(vc: modalVC)
+            self.showModally(vc: modalVC,
+                             fromVC: tabBarVC)
         }
         else {
             self.show(title: "Application error",
-                      message: "No categories found")
+                      message: "Bad navigation")
         }
     }
     

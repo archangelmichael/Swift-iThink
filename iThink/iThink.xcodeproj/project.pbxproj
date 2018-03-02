@@ -12,6 +12,7 @@
 		192679D02047030F00545DF3 /* UIView+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192679CF2047030F00545DF3 /* UIView+Rounded.swift */; };
 		192679D22047065100545DF3 /* ModalPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192679D12047065100545DF3 /* ModalPickerViewController.swift */; };
 		194D9F1320498464007FD3A7 /* LoginBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194D9F1220498464007FD3A7 /* LoginBaseViewController.swift */; };
+		194D9F1520499812007FD3A7 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194D9F1420499812007FD3A7 /* MainTabBarViewController.swift */; };
 		1969964A20400676002E626A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1969964920400676002E626A /* AppDelegate.swift */; };
 		1969964F20400676002E626A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1969964D20400676002E626A /* Main.storyboard */; };
 		1969965120400676002E626A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1969965020400676002E626A /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		192679CF2047030F00545DF3 /* UIView+Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Rounded.swift"; sourceTree = "<group>"; };
 		192679D12047065100545DF3 /* ModalPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPickerViewController.swift; sourceTree = "<group>"; };
 		194D9F1220498464007FD3A7 /* LoginBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBaseViewController.swift; sourceTree = "<group>"; };
+		194D9F1420499812007FD3A7 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		1969964620400676002E626A /* iThink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iThink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1969964920400676002E626A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1969964E20400676002E626A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 				19699693204032CF002E626A /* HomeViewController.swift */,
 				F094B43A2040B7F70092DC78 /* EditQuoteViewController.swift */,
 				19C3AADD20406A8A0013B19E /* AddQuoteViewController.swift */,
+				194D9F1420499812007FD3A7 /* MainTabBarViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -664,6 +667,7 @@
 				1978FD952049552A00B81B3E /* SplashViewController.swift in Sources */,
 				1978FD8F20493E9A00B81B3E /* RegisterViewController.swift in Sources */,
 				19699696204033BA002E626A /* ViewController+Navigation.swift in Sources */,
+				194D9F1520499812007FD3A7 /* MainTabBarViewController.swift in Sources */,
 				1969967B20400AD2002E626A /* LoginViewController.swift in Sources */,
 				1969968E2040283F002E626A /* FirebaseDataManager.swift in Sources */,
 				192679D02047030F00545DF3 /* UIView+Rounded.swift in Sources */,
