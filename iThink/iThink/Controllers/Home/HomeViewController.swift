@@ -79,7 +79,7 @@ class HomeViewController: UIViewController {
         
         self.loggedUser = nil
         if FirebaseAuthManager.sharedInstance.logout() {
-            self.goBack()
+            self.goBackFromTabVC()
         }
         else {
             self.show(title: "Logout failed")
@@ -87,8 +87,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func onQuote(_ sender: Any) {
-        
-        self.show(vc: EditQuoteViewController.self)
-//        self.show(vc: AddQuoteViewController.self)
+        self.show(vc: EditQuoteViewController.self,
+                  storyboard: self.storyboard)
     }
 }

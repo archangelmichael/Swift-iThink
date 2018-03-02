@@ -55,5 +55,21 @@ class WhiteTextField: UITextField {
                                                                  attributes: placeholderTextAttributes)
         }
     }
-
+    
+    func invalidate() {
+        self.text = nil
+        self.invalidatePlaceholder()
+        self.becomeFirstResponder()
+    }
+    
+    func invalidatePlaceholder() {
+        if let placeholderText = self.placeholder {
+            let placeholderTextAttributes: [NSAttributedStringKey: Any] = [
+                .foregroundColor : AppConstants.Colors.InvalidInput
+            ];
+            
+            self.attributedPlaceholder = NSAttributedString.init(string: placeholderText,
+                                                                 attributes: placeholderTextAttributes)
+        }
+    }
 }

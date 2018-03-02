@@ -41,11 +41,11 @@ class AddQuoteViewController: UIViewController {
     }
 
     @IBAction func onSelectCategory(_ sender: Any) {
-        if let modalVC = self.storyboard?.instantiateViewController(withIdentifier: ModalPickerViewController.self.defaultStoryboardIdentifier) as? ModalPickerViewController {
-            let allCategories = AppData.sharedInstance.quoteCategories
-            let pickerItems = PickerParser.getItemsFromQuoteCategories(quoteCategories: allCategories)
-            modalVC.pickerItems = pickerItems
-            modalVC.pickerDelegate = self
+        let allCategories = AppData.sharedInstance.quoteCategories
+        let pickerItems = PickerParser.getItemsFromQuoteCategories(quoteCategories: allCategories)
+        if let modalVC = ModalPickerViewController.getInstance(items: pickerItems,
+                                                               selectedItem: nil,
+                                                               delegate: self) {
             self.showModally(vc: modalVC)
         }
         else {

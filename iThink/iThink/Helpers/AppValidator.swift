@@ -10,23 +10,23 @@ import UIKit
 
 class AppValidator {
     
-    static func verifyCredentials(username: String?,
-                                  password: String?) -> (areValid: Bool, name: String?, email: String?, pass: String?) {
-        guard
-            let name = username?.trimmingCharacters(in: .whitespacesAndNewlines),
-            let pass = password?.trimmingCharacters(in: .whitespacesAndNewlines),
-            name.count > 3,
-            pass.count > 3
-            else {
-                return (areValid: false,
-                        name: nil,
-                        email: nil,
-                        pass: nil)
+    static func isValidInput(text: String?) -> Bool {
+        guard let input = text, input.count > 3 else {
+            return false
         }
         
-        return (areValid: true,
-                name: name,
-                email: "\(name)@abv.bg",
-                pass: pass)
+        return true
     }
+    
+    static func isValidEmail(email: String?) -> Bool {
+        guard let email = email, isValidInput(text: email) else {
+            return false
+        }
+        
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: email)
+    }
+    
 }

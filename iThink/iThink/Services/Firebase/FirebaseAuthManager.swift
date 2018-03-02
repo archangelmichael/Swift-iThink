@@ -22,52 +22,64 @@ class FirebaseAuthManager : NSObject {
     
     private override init() { }
     
-    func login(username: String?,
-               password: String?,
+    func login(email: String,
+               pass: String,
                success: AuthSuccess?,
                failure: AuthFailure?) {
-        
-        let userCredentials = AppValidator.verifyCredentials(username: username, password: password)
-        if userCredentials.areValid {
-            Auth.auth().signIn(withEmail: userCredentials.email!,
-                               password: userCredentials.pass!)
-            { (user, error) in
-                if let fbUser = user {
-                    success?(fbUser.uid)
-                }
-                else {
-                    failure?(error!.localizedDescription)
-                }
-            }
+        guard AppValidator.isValidEmail(email: email) else {
+            failure?("Invalid email")
+            return
         }
-        else {
-            failure?("Invalid user credentials")
+        
+        guard AppValidator.isValidInput(text: pass) else {
+            failure?("Invalid password")
+            return
+        }
+        
+        Auth.auth().signIn(withEmail: email,
+                           password: pass)
+        { (user, error) in
+            if let fbUser = user {
+                success?(fbUser.uid)
+            }
+            else {
+                failure?(error!.localizedDescription)
+            }
         }
     }
     
-    func register(username: String?,
-                  password: String?,
+    func register(name: String,
+                  email: String,
+                  pass: String,
                   success: AuthSuccess?,
                   failure: AuthFailure?) {
-        
-        let userCredentials = AppValidator.verifyCredentials(username: username, password: password)
-        if userCredentials.areValid {
-            Auth.auth().createUser(withEmail: userCredentials.email!,
-                                   password: userCredentials.pass!)
-            { (user, error) in
-                if let fbUser = user {
-                    FirebaseDataManager.sharedInstance.saveUser(uid: fbUser.uid,
-                                                                name: userCredentials.name!,
-                                                                email: userCredentials.email!)
-                    success?(fbUser.uid)
-                }
-                else {
-                    failure?(error!.localizedDescription)
-                }
-            }
+        guard AppValidator.isValidInput(text: name) else {
+            failure?("Invalid name")
+            return
         }
-        else {
-            failure?("Invalid user credentials")
+        
+        guard AppValidator.isValidEmail(email: email) else {
+            failure?("Invalid email")
+            return
+        }
+        
+        guard AppValidator.isValidInput(text: pass) else {
+            failure?("Invalid password")
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: email,
+                               password: pass)
+        { (user, error) in
+            if let fbUser = user {
+                FirebaseDataManager.sharedInstance.saveUser(uid: fbUser.uid,
+                                                            name: name,
+                                                            email: email)
+                success?(fbUser.uid)
+            }
+            else {
+                failure?(error!.localizedDescription)
+            }
         }
     }
     

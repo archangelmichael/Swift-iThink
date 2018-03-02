@@ -16,6 +16,20 @@ class ModalPickerViewController: UIViewController {
 
     @IBOutlet weak var pvItems: UIPickerView!
     
+    public static func getInstance(items: [PickerItem],
+                                   selectedItem: PickerItem?,
+                                   delegate: ModalPickerDelegate?) -> ModalPickerViewController? {
+        let storyboard = UIStoryboard.init(name: StoryboardName.Common.rawValue, bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: self.defaultStoryboardIdentifier) as? ModalPickerViewController {
+            vc.pickerItems = items
+            vc.pickerDelegate = delegate
+            vc.selectedItem = selectedItem
+            return vc
+        }
+
+        return nil
+    }
+    
     var pickerDelegate: ModalPickerDelegate?
     var pickerItems : [PickerItem] = []
     var selectedItem : PickerItem?

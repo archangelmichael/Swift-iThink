@@ -16,4 +16,14 @@ struct AppConstants {
     struct Strings {
         static let DefaultAuthor = "anonymous"
     }
+    
+    struct Segues {
+        static let GoHome = "goToHome"
+        static let GoLogin = "goToLogin"
+    }
+    
+    struct Colors {
+        static let InputBackground = UIColor.white.withAlphaComponent(0.4)
+        static let InvalidInput = UIColor(rgb: 0xDD001F)
+    }
 }

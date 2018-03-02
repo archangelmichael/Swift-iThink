@@ -30,6 +30,12 @@
 		19699696204033BA002E626A /* ViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19699695204033BA002E626A /* ViewController+Navigation.swift */; };
 		1969969A20404614002E626A /* AppValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1969969920404614002E626A /* AppValidator.swift */; };
 		1969969C20405E00002E626A /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1969969B20405E00002E626A /* Quote.swift */; };
+		1978FD8F20493E9A00B81B3E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1978FD8E20493E9A00B81B3E /* RegisterViewController.swift */; };
+		1978FD912049445100B81B3E /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1978FD902049445100B81B3E /* UIColor+Hex.swift */; };
+		1978FD93204951DB00B81B3E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1978FD92204951DB00B81B3E /* BaseViewController.swift */; };
+		1978FD952049552A00B81B3E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1978FD942049552A00B81B3E /* SplashViewController.swift */; };
+		1978FD99204955B300B81B3E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1978FD98204955B300B81B3E /* Login.storyboard */; };
+		1978FD9B2049562700B81B3E /* Common.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1978FD9A2049562700B81B3E /* Common.storyboard */; };
 		19C3AADE20406A8A0013B19E /* AddQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C3AADD20406A8A0013B19E /* AddQuoteViewController.swift */; };
 		B3E350356EED432A58D0FAAF /* Pods_iThinkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECA09656E69BBB23831420F2 /* Pods_iThinkTests.framework */; };
 		F01913D82048193E00B57933 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01913D72048193E00B57933 /* AppData.swift */; };
@@ -86,6 +92,12 @@
 		19699695204033BA002E626A /* ViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Navigation.swift"; sourceTree = "<group>"; };
 		1969969920404614002E626A /* AppValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppValidator.swift; sourceTree = "<group>"; };
 		1969969B20405E00002E626A /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		1978FD8E20493E9A00B81B3E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		1978FD902049445100B81B3E /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		1978FD92204951DB00B81B3E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		1978FD942049552A00B81B3E /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		1978FD98204955B300B81B3E /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		1978FD9A2049562700B81B3E /* Common.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Common.storyboard; sourceTree = "<group>"; };
 		19C3AADD20406A8A0013B19E /* AddQuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuoteViewController.swift; sourceTree = "<group>"; };
 		1D6995992916723419B27C09 /* Pods-iThinkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iThinkUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iThinkUITests/Pods-iThinkUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4848B7DC32710136E75B4254 /* Pods_iThinkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iThinkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,7 +190,7 @@
 				1969967C20400D55002E626A /* Views */,
 				1969967920400ABD002E626A /* Controllers */,
 				1969964920400676002E626A /* AppDelegate.swift */,
-				1969964D20400676002E626A /* Main.storyboard */,
+				1978FD972049559E00B81B3E /* Storyboards */,
 				1969965020400676002E626A /* Assets.xcassets */,
 				1969965220400676002E626A /* LaunchScreen.storyboard */,
 				1969967720400892002E626A /* GoogleService-Info.plist */,
@@ -208,12 +220,10 @@
 		1969967920400ABD002E626A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1978FD9C2049567700B81B3E /* Common */,
 				1969968A20401E11002E626A /* Extensions */,
-				1969967A20400AD2002E626A /* LoginViewController.swift */,
-				19699693204032CF002E626A /* HomeViewController.swift */,
-				F094B43A2040B7F70092DC78 /* EditQuoteViewController.swift */,
-				19C3AADD20406A8A0013B19E /* AddQuoteViewController.swift */,
-				192679D12047065100545DF3 /* ModalPickerViewController.swift */,
+				1978FD962049553600B81B3E /* Login */,
+				1978FD9D2049569300B81B3E /* Home */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -231,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				192679CF2047030F00545DF3 /* UIView+Rounded.swift */,
+				1978FD902049445100B81B3E /* UIColor+Hex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -283,6 +294,45 @@
 				1969968F20402A7A002E626A /* FirebaseDataParser.swift */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		1978FD962049553600B81B3E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1969967A20400AD2002E626A /* LoginViewController.swift */,
+				1978FD8E20493E9A00B81B3E /* RegisterViewController.swift */,
+				1978FD942049552A00B81B3E /* SplashViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		1978FD972049559E00B81B3E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				1969964D20400676002E626A /* Main.storyboard */,
+				1978FD98204955B300B81B3E /* Login.storyboard */,
+				1978FD9A2049562700B81B3E /* Common.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		1978FD9C2049567700B81B3E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				192679D12047065100545DF3 /* ModalPickerViewController.swift */,
+				1978FD92204951DB00B81B3E /* BaseViewController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		1978FD9D2049569300B81B3E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				19699693204032CF002E626A /* HomeViewController.swift */,
+				F094B43A2040B7F70092DC78 /* EditQuoteViewController.swift */,
+				19C3AADD20406A8A0013B19E /* AddQuoteViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		EFB7F5A41043B9306A2E7442 /* Frameworks */ = {
@@ -422,6 +472,8 @@
 				1969965420400676002E626A /* LaunchScreen.storyboard in Resources */,
 				1969967820400892002E626A /* GoogleService-Info.plist in Resources */,
 				1969965120400676002E626A /* Assets.xcassets in Resources */,
+				1978FD9B2049562700B81B3E /* Common.storyboard in Resources */,
+				1978FD99204955B300B81B3E /* Login.storyboard in Resources */,
 				1969964F20400676002E626A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -606,6 +658,8 @@
 				19699684204017A3002E626A /* AlertManager.swift in Sources */,
 				F01913DC204822A500B57933 /* PickerParser.swift in Sources */,
 				F094B43F2040BC570092DC78 /* AppConstants.swift in Sources */,
+				1978FD952049552A00B81B3E /* SplashViewController.swift in Sources */,
+				1978FD8F20493E9A00B81B3E /* RegisterViewController.swift in Sources */,
 				19699696204033BA002E626A /* ViewController+Navigation.swift in Sources */,
 				1969967B20400AD2002E626A /* LoginViewController.swift in Sources */,
 				1969968E2040283F002E626A /* FirebaseDataManager.swift in Sources */,
@@ -615,12 +669,14 @@
 				F01913DA2048226A00B57933 /* PickerItem.swift in Sources */,
 				192679D22047065100545DF3 /* ModalPickerViewController.swift in Sources */,
 				1969969A20404614002E626A /* AppValidator.swift in Sources */,
+				1978FD93204951DB00B81B3E /* BaseViewController.swift in Sources */,
 				19C3AADE20406A8A0013B19E /* AddQuoteViewController.swift in Sources */,
 				19699694204032CF002E626A /* HomeViewController.swift in Sources */,
 				1969968C20401E30002E626A /* ViewController+Alert.swift in Sources */,
 				1969969C20405E00002E626A /* Quote.swift in Sources */,
 				F094B4412040CC1E0092DC78 /* QuoteCategory.swift in Sources */,
 				F094B43B2040B7F70092DC78 /* EditQuoteViewController.swift in Sources */,
+				1978FD912049445100B81B3E /* UIColor+Hex.swift in Sources */,
 				1969968920401D83002E626A /* AppUser.swift in Sources */,
 				1969969020402A7A002E626A /* FirebaseDataParser.swift in Sources */,
 				1969964A20400676002E626A /* AppDelegate.swift in Sources */,
