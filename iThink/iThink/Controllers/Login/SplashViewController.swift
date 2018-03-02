@@ -12,7 +12,7 @@ import FirebaseAuth
 
 class SplashViewController: UIViewController {
 
-    var loginNavDelegate : LoginBaseNavigationDelegate?
+    weak var loginNavDelegate : LoginBaseNavigationDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()

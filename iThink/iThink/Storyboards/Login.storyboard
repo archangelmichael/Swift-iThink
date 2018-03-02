@@ -364,6 +364,7 @@
                     <navigationItem key="navigationItem" id="OyI-dm-nYZ"/>
                     <connections>
                         <outlet property="cstrLeadingBackground" destination="PNi-r0-FaN" id="yJC-cv-wfD"/>
+                        <outlet property="cstrWidthBackground" destination="1Wi-FW-8tg" id="DPZ-i7-xdQ"/>
                         <outlet property="ivBackground" destination="Ji2-UF-HOy" id="Hu2-83-NBi"/>
                         <outlet property="vContainer" destination="SIC-Xm-EoL" id="Tvb-Cx-3fc"/>
                     </connections>

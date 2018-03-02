@@ -17,7 +17,7 @@ class RegisterViewController: BaseViewController {
     @IBOutlet weak var tfPass: WhiteTextField!
     @IBOutlet weak var tfPassConfirm: WhiteTextField!
     
-    var loginNavDelegate : LoginBaseNavigationDelegate?
+    weak var loginNavDelegate : LoginBaseNavigationDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()

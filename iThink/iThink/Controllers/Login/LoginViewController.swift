@@ -18,7 +18,7 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var btnSignIn: UIButton!
     @IBOutlet weak var btnSignUp: UIButton!
     
-    var loginNavDelegate : LoginBaseNavigationDelegate?
+    weak var loginNavDelegate : LoginBaseNavigationDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()

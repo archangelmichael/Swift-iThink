@@ -12,7 +12,7 @@ enum LoginVCType {
     case splash, login, register
 }
 
-protocol LoginBaseNavigationDelegate {
+protocol LoginBaseNavigationDelegate : class {
     func goToVC(vcType: LoginVCType)
 }
 
@@ -22,6 +22,7 @@ class LoginBaseViewController: UIViewController {
     @IBOutlet weak var vContainer: UIView!
     
     @IBOutlet weak var cstrLeadingBackground: NSLayoutConstraint!
+    @IBOutlet weak var cstrWidthBackground: NSLayoutConstraint!
     
     private let BackgroundAnimationDuration = 14.0
     
@@ -67,10 +68,10 @@ class LoginBaseViewController: UIViewController {
         addChildViewController(viewController)
 
         // Add Child View as Subview
-        view.addSubview(viewController.view)
+        self.vContainer.addSubview(viewController.view)
 
         // Configure Child View
-        viewController.view.frame = view.bounds
+        viewController.view.frame = self.vContainer.bounds
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
         // Notify Child View Controller
@@ -91,6 +92,11 @@ class LoginBaseViewController: UIViewController {
     private func animateBackground() {
         self.view.layoutIfNeeded()
         self.moveBGRight()
+    }
+    
+    private func resetBackgroundAnimation() {
+        self.ivBackground.layer.removeAllAnimations()
+        self.animateBackground()
     }
 
     private func moveBGLeft() {
@@ -119,6 +125,12 @@ class LoginBaseViewController: UIViewController {
             }
         }
     }
+    
+    override func viewWillTransition(to size: CGSize,
+                                     with coordinator: UIViewControllerTransitionCoordinator) {
+        self.cstrWidthBackground.constant = 2 * size.width
+        self.resetBackgroundAnimation()
+    }
 }
 
 extension LoginBaseViewController : LoginBaseNavigationDelegate {
@@ -140,9 +152,7 @@ extension LoginBaseViewController : LoginBaseNavigationDelegate {
             remove(asChildViewController: splashVC)
             remove(asChildViewController: loginVC)
             add(asChildViewController: registerVC)
-            
             break
-        default: break
         }
     }
 }
