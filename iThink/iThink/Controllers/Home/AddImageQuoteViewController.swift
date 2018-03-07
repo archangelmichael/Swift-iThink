@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddImageQuoteViewController: UIViewController {
+class AddImageQuoteViewController: BaseViewController {
 
     @IBOutlet weak var btnSelectCategory: UIButton!
     @IBOutlet weak var svOptions: UIStackView!
@@ -22,6 +22,7 @@ class AddImageQuoteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.toggleUserInteractions(enable: true)
         self.btnRemoveQuote.contentEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10)
         self.ivQuote.setRoundCorners()
         self.svOptions.isHidden = false
