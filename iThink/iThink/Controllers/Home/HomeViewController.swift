@@ -88,8 +88,20 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func onAddQuote(_ sender: Any) {
-        self.show(vc: AddQuoteViewController.self,
-                  storyboard: self.storyboard)
+        let options : [String : ((UIAlertAction)->Void)?] = [
+            "Add quote with image" : { (action) in
+                self.show(vc: AddImageQuoteViewController.self,
+                          storyboard: self.storyboard)
+            },
+            "Add quote with text" : { (action) in
+                self.show(vc: AddQuoteViewController.self,
+                          storyboard: self.storyboard)
+            }
+        ]
+        
+        AlertManager.showAlertWithOptions(from: self,
+                                          title: "Select option",
+                                          options: options)
     }
     
     private func refreshQuotes()

@@ -49,6 +49,7 @@
 		F094B4412040CC1E0092DC78 /* QuoteCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B4402040CC1E0092DC78 /* QuoteCategory.swift */; };
 		F0F75E5C205070D2003455C7 /* TextQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F75E5B205070D2003455C7 /* TextQuote.swift */; };
 		F0F75E5E2050718B003455C7 /* ImageQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F75E5D2050718B003455C7 /* ImageQuote.swift */; };
+		F0F75E602050790A003455C7 /* AddImageQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F75E5F2050790A003455C7 /* AddImageQuoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		F094B4402040CC1E0092DC78 /* QuoteCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCategory.swift; sourceTree = "<group>"; };
 		F0F75E5B205070D2003455C7 /* TextQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextQuote.swift; sourceTree = "<group>"; };
 		F0F75E5D2050718B003455C7 /* ImageQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageQuote.swift; sourceTree = "<group>"; };
+		F0F75E5F2050790A003455C7 /* AddImageQuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageQuoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,6 +345,7 @@
 				F094B43A2040B7F70092DC78 /* EditQuoteViewController.swift */,
 				19C3AADD20406A8A0013B19E /* AddQuoteViewController.swift */,
 				194D9F1420499812007FD3A7 /* MainTabBarViewController.swift */,
+				F0F75E5F2050790A003455C7 /* AddImageQuoteViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -698,6 +701,7 @@
 				F094B43D2040BBA30092DC78 /* ViewController+Loading.swift in Sources */,
 				F01913D82048193E00B57933 /* AppData.swift in Sources */,
 				194D9F1320498464007FD3A7 /* LoginBaseViewController.swift in Sources */,
+				F0F75E602050790A003455C7 /* AddImageQuoteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

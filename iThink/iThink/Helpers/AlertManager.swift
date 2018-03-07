@@ -26,4 +26,24 @@ class AlertManager {
         alertVC.addAction(okAction)
         from.present(alertVC, animated: true, completion: nil)
     }
+    
+    static func  showAlertWithOptions(from: UIViewController,
+                                      title: String,
+                                      message: String? = nil,
+                                      options: [String:((UIAlertAction) -> Void)?]) {
+        let alertVC = UIAlertController(title: title,
+                                        message: message,
+                                        preferredStyle: .actionSheet)
+        for option in options {
+            let action = UIAlertAction(title: option.key,
+                                       style: .default,
+                                       handler: option.value)
+            alertVC.addAction(action)
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertVC.addAction(cancel)
+        
+        from.present(alertVC, animated: true, completion: nil)
+    }
 }

@@ -18,8 +18,6 @@ class AddQuoteViewController: UIViewController {
     var selectedQuote : Quote?
     var selectedQuoteCategory : QuoteCategory?
     
-    private let MissingQuoteCategory: String = "Select Category"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -73,10 +71,12 @@ class AddQuoteViewController: UIViewController {
     
     private func refreshSelectedCategory(quoteCategory: QuoteCategory?) {
         if let quoteCategory = selectedQuoteCategory {
-            self.btnSelectCategory.setTitle(quoteCategory.name, for: UIControlState.normal)
+            self.btnSelectCategory.setTitle(quoteCategory.name,
+                                            for: UIControlState.normal)
         }
         else {
-            self.btnSelectCategory.setTitle(MissingQuoteCategory, for: UIControlState.normal)
+            self.btnSelectCategory.setTitle(AppConstants.Strings.NoCategorySelected,
+                                            for: UIControlState.normal)
         }
     }
 }

@@ -15,6 +15,7 @@ struct AppConstants {
     
     struct Strings {
         static let DefaultAuthor = "anonymous"
+        static let NoCategorySelected = "Select Category"
     }
     
     struct Segues {
