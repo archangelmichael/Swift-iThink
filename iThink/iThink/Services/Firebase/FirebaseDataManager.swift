@@ -79,15 +79,27 @@ class FirebaseDataManager : NSObject {
     
     func saveQuote(categoryID: String,
                    userID: String,
-                   text: String,
+                   text: String?,
+                   imageUrl: String?,
                    author : String?,
                    success: DataQuoteSuccess?,
                    failure: DataFailure?) {
-        let quote = ["categoryID" : categoryID,
+        if (text == nil || text!.isEmpty) && (imageUrl == nil || imageUrl!.isEmpty) {
+            failure?("Invalid quote content")
+            return;
+        }
+        
+        var quote = ["categoryID" : categoryID,
                      "userID" : userID,
-                     "text" : text,
                      "lastModified" : Date(),
                      "author" : author ?? AppConstants.Strings.DefaultAuthor] as [String : Any]
+        
+        if let quoteText = text {
+            quote["text"] = quoteText
+        }
+        else if let quoteImageUrl = imageUrl {
+            quote["imageUrl"] = quoteImageUrl
+        }
         
         quotesReference.childByAutoId().setValue(quote)
         { [weak self] (error, dbRef) in
@@ -119,14 +131,27 @@ class FirebaseDataManager : NSObject {
     
     func updateQuote(id: String,
                      categoryID: String,
-                     text: String,
+                     text: String?,
+                     imageUrl: String?,
                      author : String?,
                      success: DataQuoteSuccess?,
                      failure: DataFailure?) {
-        let quoteUpdate = ["categoryID" : categoryID,
-                           "text" : text,
+        if (text == nil || text!.isEmpty) && (imageUrl == nil || imageUrl!.isEmpty) {
+            failure?("Invalid quote content")
+            return;
+        }
+        
+        var quoteUpdate = ["categoryID" : categoryID,
                            "lastModified" : Date(),
                            "author" : author ?? AppConstants.Strings.DefaultAuthor] as [String : Any]
+        
+        if let quoteText = text {
+            quoteUpdate["text"] = quoteText
+        }
+        else if let quoteImageUrl = imageUrl {
+            quoteUpdate["imageUrl"] = quoteImageUrl
+        }
+        
         quotesReference.child(id).updateChildValues(quoteUpdate)
         { [weak self] (error, dbRef) in
             if let err = error {

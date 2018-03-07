@@ -11,6 +11,7 @@ import UIKit
 import FirebaseDatabase
 
 class FirebaseDataParser {
+    
     static func getUser(snapshot: DataSnapshot) -> AppUser? {
         if let userDict = snapshot.value as? Dictionary<String, AnyObject> {
             if let profile = userDict["profile"] as? Dictionary<String, AnyObject> {
@@ -61,16 +62,29 @@ class FirebaseDataParser {
                                  quoteDict: Dictionary<String, AnyObject>) -> Quote? {
         if  let categoryID = quoteDict["categoryID"] as? String,
             let userID = quoteDict["userID"] as? String,
-            let text = quoteDict["text"] as? String,
             let lastModified = quoteDict["lastModified"] as? Date {
             
             let author = quoteDict["author"] as? String
-            return Quote(id: id,
-                         categoryID: categoryID,
-                         userID: userID,
-                         text: text,
-                         lastModified: lastModified,
-                         author: author)
+            
+            if let imageUrl = quoteDict["imageUrl"] as? String, imageUrl.count > 0 {
+                return ImageQuote(id: id,
+                                  imageUrl: imageUrl,
+                                  categoryID: categoryID,
+                                  userID: userID,
+                                  lastModified: lastModified,
+                                  author: author)
+            }
+            
+            if let text = quoteDict["text"] as? String, text.count > 0 {
+                return TextQuote(id: id,
+                                 text: text,
+                                 categoryID: categoryID,
+                                 userID: userID,
+                                 lastModified: lastModified,
+                                 author: author)
+            }
+            
+            return nil
         }
         else {
             return nil

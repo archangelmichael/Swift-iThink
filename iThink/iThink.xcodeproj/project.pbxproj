@@ -47,6 +47,8 @@
 		F094B43D2040BBA30092DC78 /* ViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B43C2040BBA30092DC78 /* ViewController+Loading.swift */; };
 		F094B43F2040BC570092DC78 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B43E2040BC570092DC78 /* AppConstants.swift */; };
 		F094B4412040CC1E0092DC78 /* QuoteCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B4402040CC1E0092DC78 /* QuoteCategory.swift */; };
+		F0F75E5C205070D2003455C7 /* TextQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F75E5B205070D2003455C7 /* TextQuote.swift */; };
+		F0F75E5E2050718B003455C7 /* ImageQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F75E5D2050718B003455C7 /* ImageQuote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,8 @@
 		F094B43C2040BBA30092DC78 /* ViewController+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Loading.swift"; sourceTree = "<group>"; };
 		F094B43E2040BC570092DC78 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		F094B4402040CC1E0092DC78 /* QuoteCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCategory.swift; sourceTree = "<group>"; };
+		F0F75E5B205070D2003455C7 /* TextQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextQuote.swift; sourceTree = "<group>"; };
+		F0F75E5D2050718B003455C7 /* ImageQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageQuote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +271,8 @@
 				1969969B20405E00002E626A /* Quote.swift */,
 				F094B4402040CC1E0092DC78 /* QuoteCategory.swift */,
 				F01913D92048226A00B57933 /* PickerItem.swift */,
+				F0F75E5B205070D2003455C7 /* TextQuote.swift */,
+				F0F75E5D2050718B003455C7 /* ImageQuote.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -668,6 +674,7 @@
 				1978FD8F20493E9A00B81B3E /* RegisterViewController.swift in Sources */,
 				19699696204033BA002E626A /* ViewController+Navigation.swift in Sources */,
 				194D9F1520499812007FD3A7 /* MainTabBarViewController.swift in Sources */,
+				F0F75E5C205070D2003455C7 /* TextQuote.swift in Sources */,
 				1969967B20400AD2002E626A /* LoginViewController.swift in Sources */,
 				1969968E2040283F002E626A /* FirebaseDataManager.swift in Sources */,
 				192679D02047030F00545DF3 /* UIView+Rounded.swift in Sources */,
@@ -686,6 +693,7 @@
 				1978FD912049445100B81B3E /* UIColor+Hex.swift in Sources */,
 				1969968920401D83002E626A /* AppUser.swift in Sources */,
 				1969969020402A7A002E626A /* FirebaseDataParser.swift in Sources */,
+				F0F75E5E2050718B003455C7 /* ImageQuote.swift in Sources */,
 				1969964A20400676002E626A /* AppDelegate.swift in Sources */,
 				F094B43D2040BBA30092DC78 /* ViewController+Loading.swift in Sources */,
 				F01913D82048193E00B57933 /* AppData.swift in Sources */,

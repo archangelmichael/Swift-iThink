@@ -18,6 +18,13 @@ class EditQuoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let _ = self.selectedQuote as? TextQuote {
+            self.lblQuote.isHidden = false
+        }
+        else {
+            self.lblQuote.isHidden = true
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,7 +34,7 @@ class EditQuoteViewController: UIViewController {
     
     func updateUI() {
         self.lblCategory.text = self.selectedQuote.categoryID
-        self.lblQuote.text = self.selectedQuote.text
+        self.lblQuote.text = (self.selectedQuote as? TextQuote)?.text
         self.lblAuthor.text = "by @\(self.selectedQuote.author ?? AppConstants.Strings.DefaultAuthor)"
     }
     
