@@ -43,6 +43,7 @@
 		F01913D82048193E00B57933 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01913D72048193E00B57933 /* AppData.swift */; };
 		F01913DA2048226A00B57933 /* PickerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01913D92048226A00B57933 /* PickerItem.swift */; };
 		F01913DC204822A500B57933 /* PickerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01913DB204822A500B57933 /* PickerParser.swift */; };
+		F06CFBEE20602EA100F87F95 /* DummuDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06CFBED20602EA100F87F95 /* DummuDataGenerator.swift */; };
 		F094B43B2040B7F70092DC78 /* EditQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B43A2040B7F70092DC78 /* EditQuoteViewController.swift */; };
 		F094B43D2040BBA30092DC78 /* ViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B43C2040BBA30092DC78 /* ViewController+Loading.swift */; };
 		F094B43F2040BC570092DC78 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B43E2040BC570092DC78 /* AppConstants.swift */; };
@@ -118,6 +119,7 @@
 		F01913D72048193E00B57933 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		F01913D92048226A00B57933 /* PickerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerItem.swift; sourceTree = "<group>"; };
 		F01913DB204822A500B57933 /* PickerParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerParser.swift; sourceTree = "<group>"; };
+		F06CFBED20602EA100F87F95 /* DummuDataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummuDataGenerator.swift; sourceTree = "<group>"; };
 		F094B43A2040B7F70092DC78 /* EditQuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditQuoteViewController.swift; sourceTree = "<group>"; };
 		F094B43C2040BBA30092DC78 /* ViewController+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Loading.swift"; sourceTree = "<group>"; };
 		F094B43E2040BC570092DC78 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				1969969920404614002E626A /* AppValidator.swift */,
 				F094B43E2040BC570092DC78 /* AppConstants.swift */,
 				F01913DB204822A500B57933 /* PickerParser.swift */,
+				F06CFBED20602EA100F87F95 /* DummuDataGenerator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -701,6 +704,7 @@
 				F094B43D2040BBA30092DC78 /* ViewController+Loading.swift in Sources */,
 				F01913D82048193E00B57933 /* AppData.swift in Sources */,
 				194D9F1320498464007FD3A7 /* LoginBaseViewController.swift in Sources */,
+				F06CFBEE20602EA100F87F95 /* DummuDataGenerator.swift in Sources */,
 				F0F75E602050790A003455C7 /* AddImageQuoteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
