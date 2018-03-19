@@ -15,7 +15,7 @@ extension UIView {
         self.clipsToBounds = true
     }
     
-    func setColoredRoundedCorners(color: UIColor = UIColor.white,
+    func setColoredRoundedCorners(withColor color: UIColor = UIColor.white,
                                   cornerWidth: CGFloat = 1.0,
                                   radius: CGFloat = 5.0) {
         self.layer.borderColor = color.cgColor

@@ -83,15 +83,15 @@ class FirebaseAuthManager : NSObject {
         }
     }
     
-    func logout() -> Bool {
+    func logout(callback:((_ complete: Bool) -> Void)?) {
         do {
             try Auth.auth().signOut()
-            return true
         }
         catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
+            callback?(false)
         }
         
-        return false
+        callback?(true)
     }
 }

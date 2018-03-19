@@ -40,6 +40,7 @@
 		1978FD9B2049562700B81B3E /* Common.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1978FD9A2049562700B81B3E /* Common.storyboard */; };
 		19C3AADE20406A8A0013B19E /* AddQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C3AADD20406A8A0013B19E /* AddQuoteViewController.swift */; };
 		B3E350356EED432A58D0FAAF /* Pods_iThinkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECA09656E69BBB23831420F2 /* Pods_iThinkTests.framework */; };
+		F00D3A6B20603B6A00CFE3B5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00D3A6A20603B6A00CFE3B5 /* SettingsViewController.swift */; };
 		F01913D82048193E00B57933 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01913D72048193E00B57933 /* AppData.swift */; };
 		F01913DA2048226A00B57933 /* PickerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01913D92048226A00B57933 /* PickerItem.swift */; };
 		F01913DC204822A500B57933 /* PickerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01913DB204822A500B57933 /* PickerParser.swift */; };
@@ -116,6 +117,7 @@
 		D5F4643FF6CE5A8EDDA59CF4 /* Pods-iThinkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iThinkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iThinkTests/Pods-iThinkTests.release.xcconfig"; sourceTree = "<group>"; };
 		E03920493349CF2C4BC257D2 /* Pods_iThink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iThink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECA09656E69BBB23831420F2 /* Pods_iThinkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iThinkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F00D3A6A20603B6A00CFE3B5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F01913D72048193E00B57933 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		F01913D92048226A00B57933 /* PickerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerItem.swift; sourceTree = "<group>"; };
 		F01913DB204822A500B57933 /* PickerParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerParser.swift; sourceTree = "<group>"; };
@@ -231,10 +233,10 @@
 		1969967920400ABD002E626A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F00D3A6C20604A7100CFE3B5 /* Tabs */,
 				1978FD9C2049567700B81B3E /* Common */,
 				1969968A20401E11002E626A /* Extensions */,
 				1978FD962049553600B81B3E /* Login */,
-				1978FD9D2049569300B81B3E /* Home */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -347,7 +349,6 @@
 				19699693204032CF002E626A /* HomeViewController.swift */,
 				F094B43A2040B7F70092DC78 /* EditQuoteViewController.swift */,
 				19C3AADD20406A8A0013B19E /* AddQuoteViewController.swift */,
-				194D9F1420499812007FD3A7 /* MainTabBarViewController.swift */,
 				F0F75E5F2050790A003455C7 /* AddImageQuoteViewController.swift */,
 			);
 			path = Home;
@@ -361,6 +362,24 @@
 				4848B7DC32710136E75B4254 /* Pods_iThinkUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F00D3A6920603B5100CFE3B5 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F00D3A6A20603B6A00CFE3B5 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		F00D3A6C20604A7100CFE3B5 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				194D9F1420499812007FD3A7 /* MainTabBarViewController.swift */,
+				F00D3A6920603B5100CFE3B5 /* Settings */,
+				1978FD9D2049569300B81B3E /* Home */,
+			);
+			path = Tabs;
 			sourceTree = "<group>";
 		};
 		F01913D62048192C00B57933 /* Data */ = {
@@ -702,6 +721,7 @@
 				F0F75E5E2050718B003455C7 /* ImageQuote.swift in Sources */,
 				1969964A20400676002E626A /* AppDelegate.swift in Sources */,
 				F094B43D2040BBA30092DC78 /* ViewController+Loading.swift in Sources */,
+				F00D3A6B20603B6A00CFE3B5 /* SettingsViewController.swift in Sources */,
 				F01913D82048193E00B57933 /* AppData.swift in Sources */,
 				194D9F1320498464007FD3A7 /* LoginBaseViewController.swift in Sources */,
 				F06CFBEE20602EA100F87F95 /* DummuDataGenerator.swift in Sources */,

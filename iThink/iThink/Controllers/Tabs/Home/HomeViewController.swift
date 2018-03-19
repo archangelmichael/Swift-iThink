@@ -10,52 +10,39 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var cvQuotes: UICollectionView!
     
     @IBOutlet weak var vTabs: UIView!
     @IBOutlet weak var btnAll: UIButton!
     @IBOutlet weak var btnFavourites: UIButton!
     
-    var loggedUser : AppUser?
-    var logoutUser = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setAppearance()
         
-        self.lblTitle.text = " "
+        if let _ = FirebaseAuthManager.sharedInstance.loggedUser {
+            self.toggleLoading()
+            // TODO: Load quotes
+            self.toggleLoading(show: false)
+        }
+    }
+    
+    func setAppearance() {
         self.vTabs.setColoredRoundedCorners()
         self.onTabSelected(self.btnAll)
-        
-        if let loggedUser = FirebaseAuthManager.sharedInstance.loggedUser {
-            self.toggleLoading()
-            FirebaseDataManager.sharedInstance.getUser(uid: loggedUser.uid,
-                                                       success:
-                { [weak self] (user) in
-                    self?.updateProfileSuccess(user: user)
-                },
-                                                       failure:
-                { [weak self] (error) in
-                    self?.updateProfileError(error: error)
-                    
-            })
-        }
-        else {
-            self.logoutUser = true
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if self.logoutUser {
-            self.onSignOut(UIButton())
-        }
-        else {
+        if let _ = FirebaseAuthManager.sharedInstance.loggedUser {
             if !AppData.sharedInstance.areQuoteCategoriesLoaded {
                 AppData.sharedInstance.reloadQuoteCategories(callback: { [weak self] in
                     self?.refreshQuotes()
                 })
             }
+        }
+        else {
+            self.logout()
         }
     }
     
@@ -75,18 +62,6 @@ class HomeViewController: UIViewController {
         sender.isSelected = true
     }
     
-    @IBAction func onSignOut(_ sender: Any) {
-        self.toggleLoading(show: false)
-        
-        self.loggedUser = nil
-        if FirebaseAuthManager.sharedInstance.logout() {
-            self.goBackFromTabVC()
-        }
-        else {
-            self.show(title: "Logout failed")
-        }
-    }
-    
     @IBAction func onAddQuote(_ sender: Any) {
         let options : [String : ((UIAlertAction)->Void)?] = [
             "Add quote with image" : { (action) in
@@ -104,23 +79,17 @@ class HomeViewController: UIViewController {
                                           options: options)
     }
     
+    private func logout() {
+        self.toggleLoading(show: false)
+        FirebaseAuthManager.sharedInstance.logout { [weak self] (done) in
+            done ? self?.goBackFromTabVC() : self?.show(title: "Logout failed")
+            self?.toggleLoading(show: !done)
+        }
+    }
+    
     private func refreshQuotes()
     {
-        
-    }
-    
-    private func updateProfileSuccess(user: AppUser) {
+        print("Quote Categories are loaded")
         self.toggleLoading(show: false)
-        self.loggedUser = user
-        self.lblTitle.text = "Signed in as @\(user.name)"
-    }
-    
-    private func updateProfileError(error: String?) {
-        self.show(title: "Loading profile failed",
-                  message: error)
-        { [weak self] () in
-            self?.loggedUser = nil
-            self?.onSignOut(UIButton())
-        }
     }
 }
