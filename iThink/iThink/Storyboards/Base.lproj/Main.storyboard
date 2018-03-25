@@ -301,7 +301,7 @@
         <scene sceneID="0Xa-Uw-Jij">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="5In-Ry-jVF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Quotes" image="quote_tab" id="pzh-6q-rRS"/>
+                    <tabBarItem key="tabBarItem" title="Quotes" id="pzh-6q-rRS"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yb4-iZ-orm">
                         <autoresizingMask key="autoresizingMask"/>
@@ -480,7 +480,7 @@
         <scene sceneID="i6W-bT-K03">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="9Yo-LJ-ypy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="settings_tab" id="CHI-3Y-OmS"/>
+                    <tabBarItem key="tabBarItem" title="Profile" id="CHI-3Y-OmS"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3Qb-4s-uL3">
                         <autoresizingMask key="autoresizingMask"/>
@@ -776,7 +776,5 @@
         <image name="btn_add" width="120" height="120"/>
         <image name="close-btn" width="200" height="200"/>
         <image name="default_avatar" width="800" height="522"/>
-        <image name="quote_tab" width="60" height="60"/>
-        <image name="settings_tab" width="60" height="60"/>
     </resources>
 </document>

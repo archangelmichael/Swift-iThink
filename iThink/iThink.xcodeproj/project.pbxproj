@@ -11,6 +11,7 @@
 		176DB6C7AFA82FEEA1D8FE3E /* Pods_iThink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03920493349CF2C4BC257D2 /* Pods_iThink.framework */; };
 		192679D02047030F00545DF3 /* UIView+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192679CF2047030F00545DF3 /* UIView+Rounded.swift */; };
 		192679D22047065100545DF3 /* ModalPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192679D12047065100545DF3 /* ModalPickerViewController.swift */; };
+		192AE707206800A900AF8BE1 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192AE706206800A900AF8BE1 /* UIImage+Resize.swift */; };
 		194D9F1320498464007FD3A7 /* LoginBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194D9F1220498464007FD3A7 /* LoginBaseViewController.swift */; };
 		194D9F1520499812007FD3A7 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194D9F1420499812007FD3A7 /* MainTabBarViewController.swift */; };
 		1969964A20400676002E626A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1969964920400676002E626A /* AppDelegate.swift */; };
@@ -74,6 +75,7 @@
 /* Begin PBXFileReference section */
 		192679CF2047030F00545DF3 /* UIView+Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Rounded.swift"; sourceTree = "<group>"; };
 		192679D12047065100545DF3 /* ModalPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPickerViewController.swift; sourceTree = "<group>"; };
+		192AE706206800A900AF8BE1 /* UIImage+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		194D9F1220498464007FD3A7 /* LoginBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBaseViewController.swift; sourceTree = "<group>"; };
 		194D9F1420499812007FD3A7 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		1969964620400676002E626A /* iThink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iThink.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -255,6 +257,7 @@
 			children = (
 				192679CF2047030F00545DF3 /* UIView+Rounded.swift */,
 				1978FD902049445100B81B3E /* UIColor+Hex.swift */,
+				192AE706206800A900AF8BE1 /* UIImage+Resize.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -720,6 +723,7 @@
 				1969969020402A7A002E626A /* FirebaseDataParser.swift in Sources */,
 				F0F75E5E2050718B003455C7 /* ImageQuote.swift in Sources */,
 				1969964A20400676002E626A /* AppDelegate.swift in Sources */,
+				192AE707206800A900AF8BE1 /* UIImage+Resize.swift in Sources */,
 				F094B43D2040BBA30092DC78 /* ViewController+Loading.swift in Sources */,
 				F00D3A6B20603B6A00CFE3B5 /* SettingsViewController.swift in Sources */,
 				F01913D82048193E00B57933 /* AppData.swift in Sources */,
