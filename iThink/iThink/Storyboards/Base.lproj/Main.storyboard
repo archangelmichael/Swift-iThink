@@ -680,7 +680,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="588"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRr-eI-cwT">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="277.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="306.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wi-YS-nAI">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="36"/>
@@ -699,26 +699,36 @@
                                                             <constraint firstAttribute="height" constant="150" id="KQc-h5-Wuc"/>
                                                         </constraints>
                                                     </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ip0-U7-N3l">
+                                                        <rect key="frame" x="0.0" y="216" width="343" height="29"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                        <state key="normal" title="Change avatar">
+                                                            <color key="titleColor" white="1" alpha="0.79730308219178081" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onChangeAvatar:" destination="etH-FG-RAM" eventType="touchUpInside" id="Zoo-UG-L30"/>
+                                                        </connections>
+                                                    </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signed in as " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Klb-va-bG9">
-                                                        <rect key="frame" x="20" y="236" width="303" height="21.5"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="21.5" id="5p2-Kf-LMm"/>
-                                                        </constraints>
+                                                        <rect key="frame" x="20" y="265" width="303" height="21.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="ip0-U7-N3l" secondAttribute="trailing" id="9EB-bD-xES"/>
                                                     <constraint firstItem="KeU-IE-rIU" firstAttribute="top" secondItem="0Wi-YS-nAI" secondAttribute="bottom" constant="30" id="DDi-gH-jpo"/>
+                                                    <constraint firstItem="Klb-va-bG9" firstAttribute="top" secondItem="ip0-U7-N3l" secondAttribute="bottom" constant="20" id="JIA-qt-fAO"/>
                                                     <constraint firstAttribute="trailing" secondItem="0Wi-YS-nAI" secondAttribute="trailing" id="Ljd-AB-aN5"/>
                                                     <constraint firstItem="0Wi-YS-nAI" firstAttribute="top" secondItem="TRr-eI-cwT" secondAttribute="top" id="O1E-TA-w8a"/>
                                                     <constraint firstItem="Klb-va-bG9" firstAttribute="centerX" secondItem="TRr-eI-cwT" secondAttribute="centerX" id="VZA-Mh-94V"/>
                                                     <constraint firstItem="Klb-va-bG9" firstAttribute="leading" secondItem="TRr-eI-cwT" secondAttribute="leading" constant="20" id="ZiX-jd-Esi"/>
                                                     <constraint firstItem="0Wi-YS-nAI" firstAttribute="leading" secondItem="TRr-eI-cwT" secondAttribute="leading" id="ldq-Cv-2ux"/>
                                                     <constraint firstAttribute="bottom" secondItem="Klb-va-bG9" secondAttribute="bottom" constant="20" id="m0q-MA-FLI"/>
-                                                    <constraint firstItem="Klb-va-bG9" firstAttribute="top" secondItem="KeU-IE-rIU" secondAttribute="bottom" constant="20" id="n8I-7J-A3b"/>
+                                                    <constraint firstItem="ip0-U7-N3l" firstAttribute="top" secondItem="KeU-IE-rIU" secondAttribute="bottom" id="pst-RO-ODc"/>
                                                     <constraint firstItem="KeU-IE-rIU" firstAttribute="centerX" secondItem="TRr-eI-cwT" secondAttribute="centerX" id="s8i-IL-bkO"/>
+                                                    <constraint firstItem="ip0-U7-N3l" firstAttribute="leading" secondItem="TRr-eI-cwT" secondAttribute="leading" id="upZ-yl-UFK"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
