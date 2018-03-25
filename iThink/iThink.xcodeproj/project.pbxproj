@@ -12,6 +12,7 @@
 		192679D02047030F00545DF3 /* UIView+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192679CF2047030F00545DF3 /* UIView+Rounded.swift */; };
 		192679D22047065100545DF3 /* ModalPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192679D12047065100545DF3 /* ModalPickerViewController.swift */; };
 		192AE707206800A900AF8BE1 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192AE706206800A900AF8BE1 /* UIImage+Resize.swift */; };
+		192AE7092068079200AF8BE1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192AE7082068079200AF8BE1 /* ImagePicker.swift */; };
 		194D9F1320498464007FD3A7 /* LoginBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194D9F1220498464007FD3A7 /* LoginBaseViewController.swift */; };
 		194D9F1520499812007FD3A7 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194D9F1420499812007FD3A7 /* MainTabBarViewController.swift */; };
 		1969964A20400676002E626A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1969964920400676002E626A /* AppDelegate.swift */; };
@@ -76,6 +77,7 @@
 		192679CF2047030F00545DF3 /* UIView+Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Rounded.swift"; sourceTree = "<group>"; };
 		192679D12047065100545DF3 /* ModalPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPickerViewController.swift; sourceTree = "<group>"; };
 		192AE706206800A900AF8BE1 /* UIImage+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
+		192AE7082068079200AF8BE1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		194D9F1220498464007FD3A7 /* LoginBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBaseViewController.swift; sourceTree = "<group>"; };
 		194D9F1420499812007FD3A7 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		1969964620400676002E626A /* iThink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iThink.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,6 +272,7 @@
 				F094B43E2040BC570092DC78 /* AppConstants.swift */,
 				F01913DB204822A500B57933 /* PickerParser.swift */,
 				F06CFBED20602EA100F87F95 /* DummuDataGenerator.swift */,
+				192AE7082068079200AF8BE1 /* ImagePicker.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -707,6 +710,7 @@
 				1969968E2040283F002E626A /* FirebaseDataManager.swift in Sources */,
 				192679D02047030F00545DF3 /* UIView+Rounded.swift in Sources */,
 				1969968620401B28002E626A /* FirebaseAuthManager.swift in Sources */,
+				192AE7092068079200AF8BE1 /* ImagePicker.swift in Sources */,
 				19699681204010AA002E626A /* WhiteTextField.swift in Sources */,
 				F01913DA2048226A00B57933 /* PickerItem.swift in Sources */,
 				192679D22047065100545DF3 /* ModalPickerViewController.swift in Sources */,

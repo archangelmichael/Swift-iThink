@@ -11,54 +11,41 @@ import UIKit
 class AddImageQuoteViewController: BaseViewController {
 
     @IBOutlet weak var btnSelectCategory: UIButton!
-    @IBOutlet weak var svOptions: UIStackView!
-    @IBOutlet weak var vQuote: UIView!
+    @IBOutlet weak var btnAddQuote: UIButton!
     @IBOutlet weak var ivQuote: UIImageView!
     @IBOutlet weak var btnRemoveQuote: UIButton!
     
     var selectedQuoteCategory : QuoteCategory?
     var selectedQuoteImageUrl : String?
+    var imagePicker: ImagePicker?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.imagePicker = ImagePicker(owner: self,
+                                       callback:
+            { [weak self] (image) in
+                if let image = image {
+                    self?.ivQuote.image = image
+                    self?.toggleImageSelection(show: false)
+                }
+                else {
+                    self?.toggleImageSelection(show: true)
+                }
+        })
         
         self.toggleUserInteractions(enable: true)
         self.btnRemoveQuote.contentEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10)
         self.ivQuote.setRoundCorners()
-        self.svOptions.isHidden = false
-        self.vQuote.isHidden = true
-    }
-
-    @IBAction func onSelectImage(_ sender: Any) {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
-            let pickerVC = UIImagePickerController()
-            pickerVC.delegate = self
-            pickerVC.sourceType = UIImagePickerControllerSourceType.photoLibrary
-            pickerVC.allowsEditing = true
-            self.present(pickerVC, animated: true, completion: nil)
-        }
-        else {
-            self.show(title: "Images are restricted")
-        }
+        self.toggleImageSelection(show: true)
     }
     
-    @IBAction func onTakeImage(_ sender: Any) {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
-            let pickerVC = UIImagePickerController()
-            pickerVC.delegate = self
-            pickerVC.sourceType = UIImagePickerControllerSourceType.camera
-            pickerVC.allowsEditing = true
-            self.present(pickerVC, animated: true, completion: nil)
-        }
-        else {
-            self.show(title: "Device has no camera")
-        }
+    @IBAction func onAddImage(_ sender: Any) {
+        self.imagePicker?.showImageOptions()
     }
     
     @IBAction func onClearImage(_ sender: Any) {
-        self.svOptions.isHidden = false
-        self.vQuote.isHidden = true
         self.ivQuote.image = nil
+        self.toggleImageSelection(show: true)
     }
     
     @IBAction func onSelectCategory(_ sender: Any) {
@@ -108,22 +95,11 @@ class AddImageQuoteViewController: BaseViewController {
     @IBAction func onCancel(_ sender: Any) {
         self.goBack()
     }
-}
-
-extension AddImageQuoteViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [String : Any]) {
-        self.ivQuote.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        self.vQuote.isHidden = false
-        self.svOptions.isHidden = true
-        picker.dismiss(animated: true, completion: nil)
-    }
     
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        self.vQuote.isHidden = true
-        self.ivQuote.image = nil
-        self.svOptions.isHidden = false
-        picker.dismiss(animated: true, completion: nil)
+    func toggleImageSelection(show: Bool) {
+        self.ivQuote.isHidden = show
+        self.btnRemoveQuote.isHidden = self.ivQuote.isHidden
+        self.btnAddQuote.isHidden = !self.ivQuote.isHidden
     }
 }
 

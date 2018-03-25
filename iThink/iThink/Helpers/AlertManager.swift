@@ -27,7 +27,7 @@ class AlertManager {
         from.present(alertVC, animated: true, completion: nil)
     }
     
-    static func  showAlertWithOptions(from: UIViewController,
+    static func showAlertWithOptions(from: UIViewController,
                                       title: String,
                                       message: String? = nil,
                                       options: [String:((UIAlertAction) -> Void)?]) {

@@ -13,12 +13,18 @@ class SettingsViewController: BaseViewController {
     @IBOutlet weak var lblSignedIn: UILabel!
     @IBOutlet weak var ivAvatar: UIImageView!
     
+    var imagePicker : ImagePicker?
     var loggedUser : AppUser?
     var logoutUser = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setAppearance()
+        self.imagePicker = ImagePicker(owner: self,
+                                       callback:
+            { [weak self] (image) in
+            self?.ivAvatar.image = image
+        })
         
         if let loggedUser = FirebaseAuthManager.sharedInstance.loggedUser {
             self.toggleLoading()
@@ -63,42 +69,7 @@ class SettingsViewController: BaseViewController {
     }
     
     @IBAction func onChangeAvatar(_ sender: Any) {
-        let options : [String : ((UIAlertAction)->Void)?] = [
-            "Take image" : { [weak self] (action) in self?.openCamera() },
-            "Select image" : { [weak self] (action) in self?.openImages() }
-        ]
-        
-        AlertManager.showAlertWithOptions(from: self,
-                                          title: "Select option",
-                                          options: options)
-        
-        
-    }
-    
-    func openCamera() {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let cameraVC = UIImagePickerController()
-            cameraVC.sourceType = .camera
-            cameraVC.allowsEditing = true
-            cameraVC.delegate = self
-            self.present(cameraVC, animated: true, completion: nil)
-        }
-        else {
-            self.show(title: "Device camera is not available")
-        }
-    }
-    
-    func openImages() {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            let imagesVC = UIImagePickerController()
-            imagesVC.sourceType = .photoLibrary
-            imagesVC.allowsEditing = true
-            imagesVC.delegate = self
-            self.present(imagesVC, animated: true, completion: nil)
-        }
-        else {
-            self.show(title: "Device images are not available")
-        }
+        self.imagePicker?.showImageOptions()
     }
     
     func saveAvatar(image: UIImage) {
@@ -119,20 +90,5 @@ class SettingsViewController: BaseViewController {
             self?.loggedUser = nil
             self?.onSignOut(UIButton())
         }
-    }
-}
-
-extension SettingsViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            self.saveAvatar(image: selectedImage)
-        }
-        
-        picker.dismiss(animated: true, completion: nil)
     }
 }
