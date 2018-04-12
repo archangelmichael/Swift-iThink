@@ -15,7 +15,7 @@ class ImageQuote: Quote {
          imageUrl: String,
          categoryID: String,
          userID: String,
-         lastModified: Date,
+         lastModified: String,
          author: String?) {
         self.imageUrl = imageUrl
         super.init(id: id,

@@ -62,7 +62,7 @@ class FirebaseDataParser {
                                  quoteDict: Dictionary<String, AnyObject>) -> Quote? {
         if  let categoryID = quoteDict["categoryID"] as? String,
             let userID = quoteDict["userID"] as? String,
-            let lastModified = quoteDict["lastModified"] as? Date {
+            let lastModified = quoteDict["lastModified"] as? String {
             
             let author = quoteDict["author"] as? String
             

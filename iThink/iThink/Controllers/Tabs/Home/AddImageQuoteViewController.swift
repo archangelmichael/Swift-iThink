@@ -88,10 +88,9 @@ class AddImageQuoteViewController: QuoteCategoryViewController {
             return
         }
         
-        if let username = FirebaseAuthManager.sharedInstance.loggedUser?.email?.components(separatedBy: "@")[0] {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd-HH-mm-ss"
-            let currentDateTimeString = formatter.string(from: Date())
+        if let loggedUser = FirebaseAuthManager.sharedInstance.loggedUser,
+            let username = loggedUser.email?.components(separatedBy: "@")[0] {
+            let currentDateTimeString = Date().toDateTimeEscapedString()
             let imageName = "\(username)\(currentDateTimeString)"
             self.toggleLoading()
             FirebaseStorageManager.sharedInstance.storeImage(name: imageName,
@@ -99,22 +98,28 @@ class AddImageQuoteViewController: QuoteCategoryViewController {
                                                              success:
                 { [weak self] (imageUrlStr) in
                     // Create quote with this image or delete it
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    self?.toggleLoading(show: false)
-                    self?.goBack()
+                    FirebaseDataManager.sharedInstance.saveQuote(categoryID: selectedCategory.id,
+                                                                 userID: loggedUser.uid,
+                                                                 text: nil,
+                                                                 imageUrl: imageName,
+                                                                 author: nil,
+                                                                 success:
+                        { [weak self] (quote) in
+                            self?.toggleLoading(show: false)
+                            self?.goBack()
+                    },
+                                                                 failure:
+                        { [weak self] (error) in
+                            self?.toggleLoading(show: false)
+                            self?.show(title: "Image upload failed",
+                                       message: error)
+                    })
             },
                                                              failure:
                 { [weak self] (error) in
                     self?.toggleLoading(show: false)
-                    self?.show(title: "Image upload failed", message: error)
+                    self?.show(title: "Image upload failed",
+                               message: error)
             })
         }
         else {

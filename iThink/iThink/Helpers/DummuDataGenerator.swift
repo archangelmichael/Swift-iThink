@@ -32,7 +32,7 @@ class DummuDataGenerator: NSObject {
             text: self.getRandomText(),
             categoryID: "\(self.getRandomInt(max: 1))",
             userID: self.getRandomID(),
-            lastModified: Date(),
+            lastModified: Date().toDateTimeString(),
             author: nil)
     }
     
@@ -42,7 +42,7 @@ class DummuDataGenerator: NSObject {
             imageUrl: self.getRandomImageUrl(),
             categoryID: "\(self.getRandomInt(max: 1))",
             userID: self.getRandomID(),
-            lastModified: Date(),
+            lastModified: Date().toDateTimeString(),
             author: nil)
     }
     

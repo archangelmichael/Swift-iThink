@@ -15,7 +15,7 @@ class TextQuote: Quote {
          text: String,
          categoryID: String,
          userID: String,
-         lastModified: Date,
+         lastModified: String,
          author: String?) {
         self.text = text
         super.init(id: id,

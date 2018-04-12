@@ -91,7 +91,7 @@ class FirebaseDataManager : NSObject {
         
         var quote = ["categoryID" : categoryID,
                      "userID" : userID,
-                     "lastModified" : Date(),
+                     "lastModified" : Date().toDateTimeString(),
                      "author" : author ?? AppConstants.Strings.DefaultAuthor] as [String : Any]
         
         if let quoteText = text {
@@ -142,7 +142,7 @@ class FirebaseDataManager : NSObject {
         }
         
         var quoteUpdate = ["categoryID" : categoryID,
-                           "lastModified" : Date(),
+                           "lastModified" : Date().toDateTimeString(),
                            "author" : author ?? AppConstants.Strings.DefaultAuthor] as [String : Any]
         
         if let quoteText = text {

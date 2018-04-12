@@ -12,13 +12,13 @@ class Quote: NSObject {
     var id: String
     var categoryID: String
     var userID: String
-    var lastModified: Date
+    var lastModified: String
     var author: String? = nil
     
     init(id: String,
          categoryID: String,
          userID: String,
-         lastModified: Date,
+         lastModified: String,
          author: String? = nil) {
         
         self.id = id
