@@ -49,4 +49,27 @@ class AppData: NSObject {
         let quoteCategoryFound = quoteCategories.first(where: { (cat) -> Bool in  cat.id == validQuoteCategoryId })
         return quoteCategoryFound
     }
+    
+    func createQuoteCategory(from: UIViewController,
+                             success: DataQuoteCategorySuccess?,
+                             failure: AlertVoidCallback?) {
+        from.showInput(title: "Create new category",
+                       message: nil,
+                       placeholder: "enter category name",
+                       success:
+            { (categoryName) in
+                FirebaseDataManager.sharedInstance.saveQuoteCategory(name: categoryName,
+                                                                     success: success,
+                                                                     failure:
+                    { (error) in
+                        print("Create category error : \(error)")
+                        failure?()
+                })
+        },
+                       failure:
+            {
+                print("Create category cancelled")
+                failure?()
+        })
+    }
 }

@@ -10,6 +10,13 @@ import UIKit
 
 class AppValidator {
     
+    static func isValidSpacesAndCharactersString(testStr: String) -> Bool {
+        let regex = "([\\p{L}\\s]+)"
+        
+        let strTest = NSPredicate(format:"SELF MATCHES %@", regex)
+        return strTest.evaluate(with: testStr)
+    }
+    
     static func isValidInput(text: String?) -> Bool {
         guard let input = text, input.count > 3 else {
             return false

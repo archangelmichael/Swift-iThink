@@ -105,7 +105,29 @@ class AddImageQuoteViewController: BaseViewController {
 
 extension AddImageQuoteViewController : ModalPickerDelegate {
     func didSelectPickerItemId(item: PickerItem?) {
-        self.selectedQuoteCategory = AppData.sharedInstance.getQuoteCategoryById(quoteCategoryId: item?.id)
-        self.refreshSelectedCategory(quoteCategory: self.selectedQuoteCategory)
+        let categorySelected = AppData.sharedInstance.getQuoteCategoryById(quoteCategoryId: item?.id)
+        if let selectedCategory = categorySelected,
+            selectedCategory.isCreateCategory()
+        {
+            self.toggleLoading()
+            AppData.sharedInstance.createQuoteCategory(from: self,
+                                                       success:
+                { [weak self] (category) in
+                    if let category = category {
+                        self?.selectedQuoteCategory = category
+                        self?.refreshSelectedCategory(quoteCategory: self?.selectedQuoteCategory)
+                    }
+                    
+                    self?.toggleLoading(show: false)
+                },
+                                                       failure:
+                { [weak self] in
+                    self?.toggleLoading(show: false)
+            })
+        }
+        else {
+            self.selectedQuoteCategory = categorySelected
+            self.refreshSelectedCategory(quoteCategory: self.selectedQuoteCategory)
+        }
     }
 }

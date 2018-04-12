@@ -8,13 +8,14 @@
 
 import UIKit
 
-typealias AlertOkCallback = () -> Void
+typealias AlertVoidCallback = () -> Void
+typealias AlertInputCallback = (String) -> Void
 
 class AlertManager {
     static func showOkAlert(from: UIViewController,
                             title: String,
                             message: String? = nil,
-                            callback: AlertOkCallback? = nil) {
+                            callback: AlertVoidCallback? = nil) {
         let alertVC = UIAlertController(title: title,
                                         message: message,
                                         preferredStyle: UIAlertControllerStyle.alert)
@@ -42,6 +43,42 @@ class AlertManager {
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertVC.addAction(cancel)
+        
+        from.present(alertVC, animated: true, completion: nil)
+    }
+    
+    static func showAlertWithInput(from: UIViewController,
+                                   title: String,
+                                   message: String? = nil,
+                                   placeholder: String? = nil,
+                                   success: AlertInputCallback? = nil,
+                                   failure: AlertVoidCallback? = nil) {
+        let alertVC = UIAlertController(title: title,
+                                        message: message,
+                                        preferredStyle: .alert)
+        
+        alertVC.addTextField { (tfInput) in
+            tfInput.placeholder = placeholder
+        }
+        
+        let ok = UIAlertAction(title: "Ok", style: .default) { [weak alertVC] (action) in
+            if let textField = alertVC?.textFields?[0],
+                let input = textField.text,
+                let validInput = input.condensedWhitespace,
+                AppValidator.isValidSpacesAndCharactersString(testStr: validInput) {
+                success?(validInput)
+            }
+            else {
+                failure?()
+            }
+        }
+        
+        alertVC.addAction(ok)
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+            failure?()
+        }
         alertVC.addAction(cancel)
         
         from.present(alertVC, animated: true, completion: nil)

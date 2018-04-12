@@ -11,10 +11,23 @@ import UIKit
 extension UIViewController {
     func show(title: String,
               message: String? = nil,
-              callback: AlertOkCallback? = nil) {
+              callback: AlertVoidCallback? = nil) {
         AlertManager.showOkAlert(from: self,
                                  title: title,
                                  message: message,
                                  callback: callback)
+    }
+    
+    func showInput(title: String,
+                   message: String? = nil,
+                   placeholder: String? = nil,
+                   success: AlertInputCallback? = nil,
+                   failure: AlertVoidCallback? = nil) {
+        AlertManager.showAlertWithInput(from: self,
+                                        title: title,
+                                        message: message,
+                                        placeholder: placeholder,
+                                        success: success,
+                                        failure: failure)
     }
 }
