@@ -41,6 +41,7 @@
 		1978FD99204955B300B81B3E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1978FD98204955B300B81B3E /* Login.storyboard */; };
 		1978FD9B2049562700B81B3E /* Common.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1978FD9A2049562700B81B3E /* Common.storyboard */; };
 		19A0EAD3207F744500502E62 /* String+Whitespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A0EAD2207F744500502E62 /* String+Whitespace.swift */; };
+		19A0EAD5207F7E1800502E62 /* QuoteCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A0EAD4207F7E1800502E62 /* QuoteCategoryViewController.swift */; };
 		19C3AADE20406A8A0013B19E /* AddQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C3AADD20406A8A0013B19E /* AddQuoteViewController.swift */; };
 		B3E350356EED432A58D0FAAF /* Pods_iThinkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECA09656E69BBB23831420F2 /* Pods_iThinkTests.framework */; };
 		F00D3A6B20603B6A00CFE3B5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00D3A6A20603B6A00CFE3B5 /* SettingsViewController.swift */; };
@@ -113,6 +114,7 @@
 		1978FD98204955B300B81B3E /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		1978FD9A2049562700B81B3E /* Common.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Common.storyboard; sourceTree = "<group>"; };
 		19A0EAD2207F744500502E62 /* String+Whitespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Whitespace.swift"; sourceTree = "<group>"; };
+		19A0EAD4207F7E1800502E62 /* QuoteCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCategoryViewController.swift; sourceTree = "<group>"; };
 		19C3AADD20406A8A0013B19E /* AddQuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuoteViewController.swift; sourceTree = "<group>"; };
 		1D6995992916723419B27C09 /* Pods-iThinkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iThinkUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iThinkUITests/Pods-iThinkUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4848B7DC32710136E75B4254 /* Pods_iThinkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iThinkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -348,6 +350,7 @@
 			children = (
 				192679D12047065100545DF3 /* ModalPickerViewController.swift */,
 				1978FD92204951DB00B81B3E /* BaseViewController.swift */,
+				19A0EAD4207F7E1800502E62 /* QuoteCategoryViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -736,6 +739,7 @@
 				F00D3A6B20603B6A00CFE3B5 /* SettingsViewController.swift in Sources */,
 				F01913D82048193E00B57933 /* AppData.swift in Sources */,
 				194D9F1320498464007FD3A7 /* LoginBaseViewController.swift in Sources */,
+				19A0EAD5207F7E1800502E62 /* QuoteCategoryViewController.swift in Sources */,
 				F06CFBEE20602EA100F87F95 /* DummuDataGenerator.swift in Sources */,
 				F0F75E602050790A003455C7 /* AddImageQuoteViewController.swift in Sources */,
 			);

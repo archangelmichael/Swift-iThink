@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddQuoteViewController: UIViewController {
+class AddQuoteViewController: QuoteCategoryViewController {
     
     @IBOutlet weak var btnSelectCategory: UIButton!
     @IBOutlet weak var tvQuote: UITextView!
@@ -16,7 +16,6 @@ class AddQuoteViewController: UIViewController {
     @IBOutlet weak var svQuote: UIScrollView!
     
     var selectedQuote : Quote?
-    var selectedQuoteCategory : QuoteCategory?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +68,7 @@ class AddQuoteViewController: UIViewController {
         self.tvQuote.resignFirstResponder()
     }
     
-    private func refreshSelectedCategory(quoteCategory: QuoteCategory?) {
+    internal override func refreshSelectedCategory(quoteCategory: QuoteCategory?) {
         if let quoteCategory = self.selectedQuoteCategory {
             self.btnSelectCategory.setTitle(quoteCategory.name,
                                             for: UIControlState.normal)
@@ -110,34 +109,5 @@ extension AddQuoteViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
-    }
-}
-
-extension AddQuoteViewController : ModalPickerDelegate {
-    func didSelectPickerItemId(item: PickerItem?) {
-        let categorySelected = AppData.sharedInstance.getQuoteCategoryById(quoteCategoryId: item?.id)
-        if let selectedCategory = categorySelected,
-            selectedCategory.isCreateCategory()
-        {
-            self.toggleLoading()
-            AppData.sharedInstance.createQuoteCategory(from: self,
-                                                       success:
-                { [weak self] (category) in
-                    if let category = category {
-                        self?.selectedQuoteCategory = category
-                        self?.refreshSelectedCategory(quoteCategory: self?.selectedQuoteCategory)
-                    }
-                    
-                    self?.toggleLoading(show: false)
-                },
-                                                       failure:
-                { [weak self] in
-                    self?.toggleLoading(show: false)
-            })
-        }
-        else {
-            self.selectedQuoteCategory = categorySelected
-            self.refreshSelectedCategory(quoteCategory: self.selectedQuoteCategory)
-        }
     }
 }
