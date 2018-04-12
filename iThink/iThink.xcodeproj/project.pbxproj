@@ -42,6 +42,7 @@
 		1978FD9B2049562700B81B3E /* Common.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1978FD9A2049562700B81B3E /* Common.storyboard */; };
 		19A0EAD3207F744500502E62 /* String+Whitespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A0EAD2207F744500502E62 /* String+Whitespace.swift */; };
 		19A0EAD5207F7E1800502E62 /* QuoteCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A0EAD4207F7E1800502E62 /* QuoteCategoryViewController.swift */; };
+		19A0EAD7207F91D300502E62 /* FirebaseStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A0EAD6207F91D300502E62 /* FirebaseStorageManager.swift */; };
 		19C3AADE20406A8A0013B19E /* AddQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C3AADD20406A8A0013B19E /* AddQuoteViewController.swift */; };
 		B3E350356EED432A58D0FAAF /* Pods_iThinkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECA09656E69BBB23831420F2 /* Pods_iThinkTests.framework */; };
 		F00D3A6B20603B6A00CFE3B5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00D3A6A20603B6A00CFE3B5 /* SettingsViewController.swift */; };
@@ -115,6 +116,7 @@
 		1978FD9A2049562700B81B3E /* Common.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Common.storyboard; sourceTree = "<group>"; };
 		19A0EAD2207F744500502E62 /* String+Whitespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Whitespace.swift"; sourceTree = "<group>"; };
 		19A0EAD4207F7E1800502E62 /* QuoteCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCategoryViewController.swift; sourceTree = "<group>"; };
+		19A0EAD6207F91D300502E62 /* FirebaseStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageManager.swift; sourceTree = "<group>"; };
 		19C3AADD20406A8A0013B19E /* AddQuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuoteViewController.swift; sourceTree = "<group>"; };
 		1D6995992916723419B27C09 /* Pods-iThinkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iThinkUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iThinkUITests/Pods-iThinkUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4848B7DC32710136E75B4254 /* Pods_iThinkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iThinkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -319,6 +321,7 @@
 				1969968520401B28002E626A /* FirebaseAuthManager.swift */,
 				1969968D2040283F002E626A /* FirebaseDataManager.swift */,
 				1969968F20402A7A002E626A /* FirebaseDataParser.swift */,
+				19A0EAD6207F91D300502E62 /* FirebaseStorageManager.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -735,6 +738,7 @@
 				F0F75E5E2050718B003455C7 /* ImageQuote.swift in Sources */,
 				1969964A20400676002E626A /* AppDelegate.swift in Sources */,
 				192AE707206800A900AF8BE1 /* UIImage+Resize.swift in Sources */,
+				19A0EAD7207F91D300502E62 /* FirebaseStorageManager.swift in Sources */,
 				F094B43D2040BBA30092DC78 /* ViewController+Loading.swift in Sources */,
 				F00D3A6B20603B6A00CFE3B5 /* SettingsViewController.swift in Sources */,
 				F01913D82048193E00B57933 /* AppData.swift in Sources */,

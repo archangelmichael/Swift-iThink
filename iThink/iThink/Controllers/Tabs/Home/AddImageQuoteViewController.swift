@@ -81,14 +81,46 @@ class AddImageQuoteViewController: QuoteCategoryViewController {
             return
         }
         
-        guard let selectedCategory = self.selectedQuoteCategory else {
+        guard let selectedCategory = self.selectedQuoteCategory,
+            !selectedCategory.isCreateCategory()
+            else {
             self.show(title: "Please select category")
             return
         }
         
-        // TODO: Upload selected image
-        // TODO: Create the quote or delete the uploaded image
-        // self.goBack()
+        if let username = FirebaseAuthManager.sharedInstance.loggedUser?.email?.components(separatedBy: "@")[0] {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd-HH-mm-ss"
+            let currentDateTimeString = formatter.string(from: Date())
+            let imageName = "\(username)\(currentDateTimeString)"
+            self.toggleLoading()
+            FirebaseStorageManager.sharedInstance.storeImage(name: imageName,
+                                                             image: selectedImage,
+                                                             success:
+                { [weak self] (imageUrlStr) in
+                    // Create quote with this image or delete it
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    self?.toggleLoading(show: false)
+                    self?.goBack()
+            },
+                                                             failure:
+                { [weak self] (error) in
+                    self?.toggleLoading(show: false)
+                    self?.show(title: "Image upload failed", message: error)
+            })
+        }
+        else {
+            self.show(title: "Image upload failed",
+                      message: "Please relog in and try again")
+        }
     }
     
     @IBAction func onCancel(_ sender: Any) {

@@ -55,6 +55,18 @@ class AddQuoteViewController: QuoteCategoryViewController {
     }
     
     @IBAction func onSave(_ sender: Any) {
+        guard let quoteText = self.tvQuote.text else {
+            self.show(title: "Please select image with quote")
+            return
+        }
+        
+        guard let selectedCategory = self.selectedQuoteCategory,
+            !selectedCategory.isCreateCategory()
+            else {
+                self.show(title: "Please select category")
+                return
+        }
+        
         // TODO: Save quote
         self.goBack()
     }
